@@ -68,6 +68,21 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
 
         /**
+         * Check the Passwrod
+         * and show the Error message
+         * in the Form page
+         * if any Error message have
+         * 
+         * @return void
+         */
+
+        private void _CheckPasswordValidation()
+        {
+
+        }
+
+
+        /**
          * Set the Enable properties of Login Button
          * depending on the validation
          * if the all the inputs are
@@ -84,15 +99,13 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
 
         /**
-         * Check the Passwrod
-         * and show the Error message
-         * in the Form page
-         * if any Error message have
+         * Show the Error message on inputs
+         * bellow if any error message have
          * 
          * @return void
          */
 
-        private void _CheckPasswordValidation()
+        private void _ShowErrorMessage(Inputs input, ref Label errLable, ref string errorMessage)
         {
 
         }

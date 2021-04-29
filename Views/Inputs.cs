@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace HousingManagementSystemForAIUBStudents.Views
 {
-    enum LoginInputs
-    {
-        Email,
-        Password,
-    };
+    //enum LoginInputs
+    //{
+    //    Email,
+    //    Password,
+    //};
 
-    enum RegistrationInputs
+    enum Inputs
     {
         Name,
         Email,
