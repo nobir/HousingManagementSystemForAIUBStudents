@@ -57,7 +57,7 @@
             this.tabControlIndex.Location = new System.Drawing.Point(4, 4);
             this.tabControlIndex.Name = "tabControlIndex";
             this.tabControlIndex.SelectedIndex = 0;
-            this.tabControlIndex.Size = new System.Drawing.Size(774, 545);
+            this.tabControlIndex.Size = new System.Drawing.Size(776, 553);
             this.tabControlIndex.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlIndex.TabIndex = 0;
             this.tabControlIndex.TabStop = false;
@@ -73,10 +73,10 @@
             this.tabLogin.Controls.Add(this.lbPassword);
             this.tabLogin.Controls.Add(this.tbLoginEmail);
             this.tabLogin.Controls.Add(this.lbEmail);
-            this.tabLogin.Location = new System.Drawing.Point(4, 30);
+            this.tabLogin.Location = new System.Drawing.Point(4, 26);
             this.tabLogin.Name = "tabLogin";
             this.tabLogin.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLogin.Size = new System.Drawing.Size(766, 511);
+            this.tabLogin.Size = new System.Drawing.Size(768, 523);
             this.tabLogin.TabIndex = 0;
             this.tabLogin.Text = "Login";
             this.tabLogin.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             this.lbUserType.AutoSize = true;
             this.lbUserType.Location = new System.Drawing.Point(65, 241);
             this.lbUserType.Name = "lbUserType";
-            this.lbUserType.Size = new System.Drawing.Size(78, 21);
+            this.lbUserType.Size = new System.Drawing.Size(63, 17);
             this.lbUserType.TabIndex = 9;
             this.lbUserType.Text = "User Type";
             // 
@@ -97,7 +97,7 @@
             this.errMsgPassword.ForeColor = System.Drawing.Color.Red;
             this.errMsgPassword.Location = new System.Drawing.Point(192, 173);
             this.errMsgPassword.Name = "errMsgPassword";
-            this.errMsgPassword.Size = new System.Drawing.Size(0, 19);
+            this.errMsgPassword.Size = new System.Drawing.Size(0, 15);
             this.errMsgPassword.TabIndex = 8;
             // 
             // errMsgEmail
@@ -107,7 +107,7 @@
             this.errMsgEmail.ForeColor = System.Drawing.Color.Red;
             this.errMsgEmail.Location = new System.Drawing.Point(192, 93);
             this.errMsgEmail.Name = "errMsgEmail";
-            this.errMsgEmail.Size = new System.Drawing.Size(0, 19);
+            this.errMsgEmail.Size = new System.Drawing.Size(0, 15);
             this.errMsgEmail.TabIndex = 7;
             // 
             // btnLogin
@@ -119,7 +119,7 @@
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnLogin_KeyUp);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // gbLoginType
             // 
@@ -138,7 +138,7 @@
             this.rbAdmin.AutoSize = true;
             this.rbAdmin.Location = new System.Drawing.Point(353, 20);
             this.rbAdmin.Name = "rbAdmin";
-            this.rbAdmin.Size = new System.Drawing.Size(77, 25);
+            this.rbAdmin.Size = new System.Drawing.Size(62, 21);
             this.rbAdmin.TabIndex = 5;
             this.rbAdmin.Text = "Admin";
             this.rbAdmin.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@
             this.rbRenter.AutoSize = true;
             this.rbRenter.Location = new System.Drawing.Point(179, 20);
             this.rbRenter.Name = "rbRenter";
-            this.rbRenter.Size = new System.Drawing.Size(77, 25);
+            this.rbRenter.Size = new System.Drawing.Size(65, 21);
             this.rbRenter.TabIndex = 4;
             this.rbRenter.Text = "Renter";
             this.rbRenter.UseVisualStyleBackColor = true;
@@ -159,7 +159,7 @@
             this.rbTenant.Checked = true;
             this.rbTenant.Location = new System.Drawing.Point(7, 20);
             this.rbTenant.Name = "rbTenant";
-            this.rbTenant.Size = new System.Drawing.Size(86, 25);
+            this.rbTenant.Size = new System.Drawing.Size(70, 21);
             this.rbTenant.TabIndex = 3;
             this.rbTenant.TabStop = true;
             this.rbTenant.Text = "Student";
@@ -169,8 +169,9 @@
             // 
             this.tbLoginPassword.Location = new System.Drawing.Point(196, 142);
             this.tbLoginPassword.Name = "tbLoginPassword";
-            this.tbLoginPassword.Size = new System.Drawing.Size(293, 28);
+            this.tbLoginPassword.Size = new System.Drawing.Size(293, 24);
             this.tbLoginPassword.TabIndex = 2;
+            this.tbLoginPassword.UseSystemPasswordChar = true;
             this.tbLoginPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbLoginPassword_KeyUp);
             // 
             // lbPassword
@@ -178,7 +179,7 @@
             this.lbPassword.AutoSize = true;
             this.lbPassword.Location = new System.Drawing.Point(65, 149);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(77, 21);
+            this.lbPassword.Size = new System.Drawing.Size(61, 17);
             this.lbPassword.TabIndex = 2;
             this.lbPassword.Text = "Password";
             // 
@@ -186,7 +187,7 @@
             // 
             this.tbLoginEmail.Location = new System.Drawing.Point(196, 62);
             this.tbLoginEmail.Name = "tbLoginEmail";
-            this.tbLoginEmail.Size = new System.Drawing.Size(293, 28);
+            this.tbLoginEmail.Size = new System.Drawing.Size(293, 24);
             this.tbLoginEmail.TabIndex = 1;
             this.tbLoginEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbLoginEmail_KeyUp);
             // 
@@ -195,26 +196,26 @@
             this.lbEmail.AutoSize = true;
             this.lbEmail.Location = new System.Drawing.Point(65, 69);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(48, 21);
+            this.lbEmail.Size = new System.Drawing.Size(39, 17);
             this.lbEmail.TabIndex = 0;
             this.lbEmail.Text = "Email";
             // 
             // tabRegistration
             // 
-            this.tabRegistration.Location = new System.Drawing.Point(4, 30);
+            this.tabRegistration.Location = new System.Drawing.Point(4, 26);
             this.tabRegistration.Name = "tabRegistration";
             this.tabRegistration.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistration.Size = new System.Drawing.Size(766, 511);
+            this.tabRegistration.Size = new System.Drawing.Size(766, 515);
             this.tabRegistration.TabIndex = 1;
             this.tabRegistration.Text = "Registration";
             this.tabRegistration.UseVisualStyleBackColor = true;
             // 
             // IndexForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(782, 553);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tabControlIndex);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

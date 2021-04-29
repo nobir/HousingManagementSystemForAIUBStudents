@@ -36,7 +36,8 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         private bool _IsEmailValid()
         {
-            return false;
+            string email = tbLoginEmail.Text.Trim();
+            return (email.Length != 0 && Regex.IsMatch(email, @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+(?:\.[a-zA-Z0-9-]+)*$"));
         }
 
 
@@ -51,7 +52,22 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         private void _CheckEmailValidation()
         {
+            string errorMessage = "";
+            string email = tbLoginEmail.Text.Trim();
 
+            if (email.Length == 0)
+            {
+                errorMessage += "Email can't be empty\n";
+            }
+
+            if (!Regex.IsMatch(email, @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+(?:\.[a-zA-Z0-9-]+)*$") && email.Length != 0)
+            {
+                errorMessage += "Email is not valid\n";
+            }
+
+            this._ShowErrorMessage(Inputs.Email, ref errMsgEmail, ref errorMessage);
+
+            this._SetLoginButtonEnableProperties();
         }
 
 
@@ -63,7 +79,8 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         private bool _IsPasswordValid()
         {
-            return false;
+            string password = tbLoginPassword.Text.Trim();
+            return (password.Length != 0);
         }
 
 
@@ -78,7 +95,18 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         private void _CheckPasswordValidation()
         {
+            string errorMessage = "";
+            string password = tbLoginPassword.Text.Trim();
 
+            if (password.Length == 0)
+            {
+                errorMessage += "Password can't be empty\n";
+            }
+
+            this._ShowErrorMessage(Inputs.Password, ref errMsgPassword, ref errorMessage);
+            
+
+            this._SetLoginButtonEnableProperties();
         }
 
 
@@ -94,7 +122,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         private void _SetLoginButtonEnableProperties()
         {
-
+            btnLogin.Enabled = (this._IsEmailValid() && this._IsPasswordValid());
         }
 
 
@@ -107,22 +135,60 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         private void _ShowErrorMessage(Inputs input, ref Label errLable, ref string errorMessage)
         {
+            switch (input)
+            {
+                case Inputs.Email:
+
+                    if (this._IsEmailValid())
+                    {
+                        errorMessage = "";
+                        errLable.Text = errorMessage;
+                    }
+                    else
+                    {
+                        errLable.Text = errorMessage;
+                    }
+
+                    break;
+                case Inputs.Password:
+
+                    if (this._IsPasswordValid())
+                    {
+                        errorMessage = "";
+                        errLable.Text = errorMessage;
+                    }
+                    else
+                    {
+                        errLable.Text = errorMessage;
+                    }
+
+                    break;
+            }
 
         }
 
         private void tbLoginEmail_KeyUp(object sender, KeyEventArgs e)
         {
-
+            this._CheckEmailValidation();
         }
 
         private void tbLoginPassword_KeyUp(object sender, KeyEventArgs e)
         {
-
+            this._CheckPasswordValidation();
         }
 
-        private void btnLogin_KeyUp(object sender, KeyEventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (!this._IsEmailValid() || !this._IsPasswordValid())
+            {
+                this._CheckEmailValidation();
+                this._CheckPasswordValidation();
 
+                return;
+            }
+
+            //start Database login 
         }
     }
 }
+
