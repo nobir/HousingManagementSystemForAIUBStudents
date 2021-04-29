@@ -110,12 +110,12 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         }
 
-        private void tbEmail_KeyUp(object sender, KeyEventArgs e)
+        private void tbLoginEmail_KeyUp(object sender, KeyEventArgs e)
         {
 
         }
 
-        private void tbPassword_KeyUp(object sender, KeyEventArgs e)
+        private void tbLoginPassword_KeyUp(object sender, KeyEventArgs e)
         {
 
         }

@@ -39,9 +39,9 @@
             this.rbAdmin = new System.Windows.Forms.RadioButton();
             this.rbRenter = new System.Windows.Forms.RadioButton();
             this.rbTenant = new System.Windows.Forms.RadioButton();
-            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.tbLoginPassword = new System.Windows.Forms.TextBox();
             this.lbPassword = new System.Windows.Forms.Label();
-            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.tbLoginEmail = new System.Windows.Forms.TextBox();
             this.lbEmail = new System.Windows.Forms.Label();
             this.tabRegistration = new System.Windows.Forms.TabPage();
             this.tabControlIndex.SuspendLayout();
@@ -69,9 +69,9 @@
             this.tabLogin.Controls.Add(this.errMsgEmail);
             this.tabLogin.Controls.Add(this.btnLogin);
             this.tabLogin.Controls.Add(this.gbLoginType);
-            this.tabLogin.Controls.Add(this.tbPassword);
+            this.tabLogin.Controls.Add(this.tbLoginPassword);
             this.tabLogin.Controls.Add(this.lbPassword);
-            this.tabLogin.Controls.Add(this.tbEmail);
+            this.tabLogin.Controls.Add(this.tbLoginEmail);
             this.tabLogin.Controls.Add(this.lbEmail);
             this.tabLogin.Location = new System.Drawing.Point(4, 30);
             this.tabLogin.Name = "tabLogin";
@@ -165,13 +165,13 @@
             this.rbTenant.Text = "Student";
             this.rbTenant.UseVisualStyleBackColor = true;
             // 
-            // tbPassword
+            // tbLoginPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(196, 142);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(293, 28);
-            this.tbPassword.TabIndex = 2;
-            this.tbPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbPassword_KeyUp);
+            this.tbLoginPassword.Location = new System.Drawing.Point(196, 142);
+            this.tbLoginPassword.Name = "tbLoginPassword";
+            this.tbLoginPassword.Size = new System.Drawing.Size(293, 28);
+            this.tbLoginPassword.TabIndex = 2;
+            this.tbLoginPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbLoginPassword_KeyUp);
             // 
             // lbPassword
             // 
@@ -182,13 +182,13 @@
             this.lbPassword.TabIndex = 2;
             this.lbPassword.Text = "Password";
             // 
-            // tbEmail
+            // tbLoginEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(196, 62);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(293, 28);
-            this.tbEmail.TabIndex = 1;
-            this.tbEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbEmail_KeyUp);
+            this.tbLoginEmail.Location = new System.Drawing.Point(196, 62);
+            this.tbLoginEmail.Name = "tbLoginEmail";
+            this.tbLoginEmail.Size = new System.Drawing.Size(293, 28);
+            this.tbLoginEmail.TabIndex = 1;
+            this.tbLoginEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbLoginEmail_KeyUp);
             // 
             // lbEmail
             // 
@@ -242,9 +242,9 @@
         private System.Windows.Forms.TabPage tabLogin;
         private System.Windows.Forms.TabPage tabRegistration;
         private System.Windows.Forms.Label lbEmail;
-        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.TextBox tbLoginPassword;
         private System.Windows.Forms.Label lbPassword;
-        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.TextBox tbLoginEmail;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.GroupBox gbLoginType;
         private System.Windows.Forms.RadioButton rbAdmin;
