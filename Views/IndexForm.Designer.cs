@@ -79,7 +79,7 @@
             this.tabControlIndex.Location = new System.Drawing.Point(4, 4);
             this.tabControlIndex.Name = "tabControlIndex";
             this.tabControlIndex.SelectedIndex = 0;
-            this.tabControlIndex.Size = new System.Drawing.Size(774, 545);
+            this.tabControlIndex.Size = new System.Drawing.Size(776, 553);
             this.tabControlIndex.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlIndex.TabIndex = 0;
             this.tabControlIndex.TabStop = false;
@@ -95,10 +95,10 @@
             this.tabLogin.Controls.Add(this.lbLoginPassword);
             this.tabLogin.Controls.Add(this.tbLoginEmail);
             this.tabLogin.Controls.Add(this.lbLoginEmail);
-            this.tabLogin.Location = new System.Drawing.Point(4, 30);
+            this.tabLogin.Location = new System.Drawing.Point(4, 26);
             this.tabLogin.Name = "tabLogin";
             this.tabLogin.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLogin.Size = new System.Drawing.Size(766, 511);
+            this.tabLogin.Size = new System.Drawing.Size(768, 523);
             this.tabLogin.TabIndex = 0;
             this.tabLogin.Text = "Login";
             this.tabLogin.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             this.lbLoginUserType.AutoSize = true;
             this.lbLoginUserType.Location = new System.Drawing.Point(65, 241);
             this.lbLoginUserType.Name = "lbLoginUserType";
-            this.lbLoginUserType.Size = new System.Drawing.Size(78, 21);
+            this.lbLoginUserType.Size = new System.Drawing.Size(63, 17);
             this.lbLoginUserType.TabIndex = 9;
             this.lbLoginUserType.Text = "User Type";
             // 
@@ -119,7 +119,7 @@
             this.errMsgLoginPassword.ForeColor = System.Drawing.Color.Red;
             this.errMsgLoginPassword.Location = new System.Drawing.Point(192, 173);
             this.errMsgLoginPassword.Name = "errMsgLoginPassword";
-            this.errMsgLoginPassword.Size = new System.Drawing.Size(0, 19);
+            this.errMsgLoginPassword.Size = new System.Drawing.Size(0, 15);
             this.errMsgLoginPassword.TabIndex = 8;
             // 
             // errMsgLoginEmail
@@ -129,7 +129,7 @@
             this.errMsgLoginEmail.ForeColor = System.Drawing.Color.Red;
             this.errMsgLoginEmail.Location = new System.Drawing.Point(192, 93);
             this.errMsgLoginEmail.Name = "errMsgLoginEmail";
-            this.errMsgLoginEmail.Size = new System.Drawing.Size(0, 19);
+            this.errMsgLoginEmail.Size = new System.Drawing.Size(0, 15);
             this.errMsgLoginEmail.TabIndex = 7;
             // 
             // btnLogin
@@ -160,7 +160,7 @@
             this.rbLoginAdmin.AutoSize = true;
             this.rbLoginAdmin.Location = new System.Drawing.Point(353, 20);
             this.rbLoginAdmin.Name = "rbLoginAdmin";
-            this.rbLoginAdmin.Size = new System.Drawing.Size(77, 25);
+            this.rbLoginAdmin.Size = new System.Drawing.Size(62, 21);
             this.rbLoginAdmin.TabIndex = 5;
             this.rbLoginAdmin.Text = "Admin";
             this.rbLoginAdmin.UseVisualStyleBackColor = true;
@@ -170,7 +170,7 @@
             this.rbLoginRenter.AutoSize = true;
             this.rbLoginRenter.Location = new System.Drawing.Point(179, 20);
             this.rbLoginRenter.Name = "rbLoginRenter";
-            this.rbLoginRenter.Size = new System.Drawing.Size(77, 25);
+            this.rbLoginRenter.Size = new System.Drawing.Size(65, 21);
             this.rbLoginRenter.TabIndex = 4;
             this.rbLoginRenter.Text = "Renter";
             this.rbLoginRenter.UseVisualStyleBackColor = true;
@@ -181,7 +181,7 @@
             this.rbLoginTenant.Checked = true;
             this.rbLoginTenant.Location = new System.Drawing.Point(7, 20);
             this.rbLoginTenant.Name = "rbLoginTenant";
-            this.rbLoginTenant.Size = new System.Drawing.Size(86, 25);
+            this.rbLoginTenant.Size = new System.Drawing.Size(70, 21);
             this.rbLoginTenant.TabIndex = 3;
             this.rbLoginTenant.TabStop = true;
             this.rbLoginTenant.Text = "Student";
@@ -191,7 +191,7 @@
             // 
             this.tbLoginPassword.Location = new System.Drawing.Point(196, 142);
             this.tbLoginPassword.Name = "tbLoginPassword";
-            this.tbLoginPassword.Size = new System.Drawing.Size(293, 28);
+            this.tbLoginPassword.Size = new System.Drawing.Size(293, 24);
             this.tbLoginPassword.TabIndex = 2;
             this.tbLoginPassword.UseSystemPasswordChar = true;
             this.tbLoginPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbLoginPassword_KeyUp);
@@ -201,7 +201,7 @@
             this.lbLoginPassword.AutoSize = true;
             this.lbLoginPassword.Location = new System.Drawing.Point(65, 149);
             this.lbLoginPassword.Name = "lbLoginPassword";
-            this.lbLoginPassword.Size = new System.Drawing.Size(77, 21);
+            this.lbLoginPassword.Size = new System.Drawing.Size(61, 17);
             this.lbLoginPassword.TabIndex = 2;
             this.lbLoginPassword.Text = "Password";
             // 
@@ -209,7 +209,7 @@
             // 
             this.tbLoginEmail.Location = new System.Drawing.Point(196, 62);
             this.tbLoginEmail.Name = "tbLoginEmail";
-            this.tbLoginEmail.Size = new System.Drawing.Size(293, 28);
+            this.tbLoginEmail.Size = new System.Drawing.Size(293, 24);
             this.tbLoginEmail.TabIndex = 1;
             this.tbLoginEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbLoginEmail_KeyUp);
             // 
@@ -218,7 +218,7 @@
             this.lbLoginEmail.AutoSize = true;
             this.lbLoginEmail.Location = new System.Drawing.Point(65, 69);
             this.lbLoginEmail.Name = "lbLoginEmail";
-            this.lbLoginEmail.Size = new System.Drawing.Size(48, 21);
+            this.lbLoginEmail.Size = new System.Drawing.Size(39, 17);
             this.lbLoginEmail.TabIndex = 0;
             this.lbLoginEmail.Text = "Email";
             // 
@@ -242,10 +242,10 @@
             this.tabRegistration.Controls.Add(this.lbRegPassword);
             this.tabRegistration.Controls.Add(this.tbRegEmail);
             this.tabRegistration.Controls.Add(this.lbRegEmail);
-            this.tabRegistration.Location = new System.Drawing.Point(4, 30);
+            this.tabRegistration.Location = new System.Drawing.Point(4, 26);
             this.tabRegistration.Name = "tabRegistration";
             this.tabRegistration.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistration.Size = new System.Drawing.Size(766, 511);
+            this.tabRegistration.Size = new System.Drawing.Size(768, 523);
             this.tabRegistration.TabIndex = 1;
             this.tabRegistration.Text = "Registration";
             this.tabRegistration.UseVisualStyleBackColor = true;
@@ -268,14 +268,14 @@
             this.errMsgRegPhone.ForeColor = System.Drawing.Color.Red;
             this.errMsgRegPhone.Location = new System.Drawing.Point(210, 188);
             this.errMsgRegPhone.Name = "errMsgRegPhone";
-            this.errMsgRegPhone.Size = new System.Drawing.Size(0, 19);
+            this.errMsgRegPhone.Size = new System.Drawing.Size(0, 15);
             this.errMsgRegPhone.TabIndex = 26;
             // 
             // tbRegPhone
             // 
             this.tbRegPhone.Location = new System.Drawing.Point(214, 157);
             this.tbRegPhone.Name = "tbRegPhone";
-            this.tbRegPhone.Size = new System.Drawing.Size(293, 28);
+            this.tbRegPhone.Size = new System.Drawing.Size(293, 24);
             this.tbRegPhone.TabIndex = 3;
             this.tbRegPhone.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRegPhone_KeyUp);
             // 
@@ -284,7 +284,7 @@
             this.lbRegPhone.AutoSize = true;
             this.lbRegPhone.Location = new System.Drawing.Point(36, 164);
             this.lbRegPhone.Name = "lbRegPhone";
-            this.lbRegPhone.Size = new System.Drawing.Size(54, 21);
+            this.lbRegPhone.Size = new System.Drawing.Size(43, 17);
             this.lbRegPhone.TabIndex = 24;
             this.lbRegPhone.Text = "Phone";
             // 
@@ -295,14 +295,14 @@
             this.errMsgRegConfirmPassword.ForeColor = System.Drawing.Color.Red;
             this.errMsgRegConfirmPassword.Location = new System.Drawing.Point(210, 331);
             this.errMsgRegConfirmPassword.Name = "errMsgRegConfirmPassword";
-            this.errMsgRegConfirmPassword.Size = new System.Drawing.Size(0, 19);
+            this.errMsgRegConfirmPassword.Size = new System.Drawing.Size(0, 15);
             this.errMsgRegConfirmPassword.TabIndex = 23;
             // 
             // tbRegConfirmPassword
             // 
             this.tbRegConfirmPassword.Location = new System.Drawing.Point(214, 300);
             this.tbRegConfirmPassword.Name = "tbRegConfirmPassword";
-            this.tbRegConfirmPassword.Size = new System.Drawing.Size(293, 28);
+            this.tbRegConfirmPassword.Size = new System.Drawing.Size(293, 24);
             this.tbRegConfirmPassword.TabIndex = 5;
             this.tbRegConfirmPassword.UseSystemPasswordChar = true;
             this.tbRegConfirmPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRegConfirmPassword_KeyUp);
@@ -312,7 +312,7 @@
             this.lbRegConfirmPassword.AutoSize = true;
             this.lbRegConfirmPassword.Location = new System.Drawing.Point(36, 307);
             this.lbRegConfirmPassword.Name = "lbRegConfirmPassword";
-            this.lbRegConfirmPassword.Size = new System.Drawing.Size(137, 21);
+            this.lbRegConfirmPassword.Size = new System.Drawing.Size(108, 17);
             this.lbRegConfirmPassword.TabIndex = 22;
             this.lbRegConfirmPassword.Text = "Confirm Password";
             // 
@@ -323,14 +323,14 @@
             this.errMsgRegName.ForeColor = System.Drawing.Color.Red;
             this.errMsgRegName.Location = new System.Drawing.Point(210, 48);
             this.errMsgRegName.Name = "errMsgRegName";
-            this.errMsgRegName.Size = new System.Drawing.Size(0, 19);
+            this.errMsgRegName.Size = new System.Drawing.Size(0, 15);
             this.errMsgRegName.TabIndex = 20;
             // 
             // tbRegName
             // 
             this.tbRegName.Location = new System.Drawing.Point(214, 17);
             this.tbRegName.Name = "tbRegName";
-            this.tbRegName.Size = new System.Drawing.Size(293, 28);
+            this.tbRegName.Size = new System.Drawing.Size(293, 24);
             this.tbRegName.TabIndex = 1;
             this.tbRegName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRegName_KeyUp);
             // 
@@ -339,7 +339,7 @@
             this.lbRegName.AutoSize = true;
             this.lbRegName.Location = new System.Drawing.Point(36, 24);
             this.lbRegName.Name = "lbRegName";
-            this.lbRegName.Size = new System.Drawing.Size(51, 21);
+            this.lbRegName.Size = new System.Drawing.Size(42, 17);
             this.lbRegName.TabIndex = 18;
             this.lbRegName.Text = "Name";
             // 
@@ -348,7 +348,7 @@
             this.lbRegUserType.AutoSize = true;
             this.lbRegUserType.Location = new System.Drawing.Point(35, 395);
             this.lbRegUserType.Name = "lbRegUserType";
-            this.lbRegUserType.Size = new System.Drawing.Size(78, 21);
+            this.lbRegUserType.Size = new System.Drawing.Size(63, 17);
             this.lbRegUserType.TabIndex = 17;
             this.lbRegUserType.Text = "User Type";
             // 
@@ -359,7 +359,7 @@
             this.errMsgRegPassword.ForeColor = System.Drawing.Color.Red;
             this.errMsgRegPassword.Location = new System.Drawing.Point(210, 260);
             this.errMsgRegPassword.Name = "errMsgRegPassword";
-            this.errMsgRegPassword.Size = new System.Drawing.Size(0, 19);
+            this.errMsgRegPassword.Size = new System.Drawing.Size(0, 15);
             this.errMsgRegPassword.TabIndex = 16;
             // 
             // errMsgRegEmail
@@ -369,7 +369,7 @@
             this.errMsgRegEmail.ForeColor = System.Drawing.Color.Red;
             this.errMsgRegEmail.Location = new System.Drawing.Point(210, 118);
             this.errMsgRegEmail.Name = "errMsgRegEmail";
-            this.errMsgRegEmail.Size = new System.Drawing.Size(0, 19);
+            this.errMsgRegEmail.Size = new System.Drawing.Size(0, 15);
             this.errMsgRegEmail.TabIndex = 15;
             // 
             // gbRegUserType
@@ -388,7 +388,7 @@
             this.rbRegRenter.AutoSize = true;
             this.rbRegRenter.Location = new System.Drawing.Point(179, 20);
             this.rbRegRenter.Name = "rbRegRenter";
-            this.rbRegRenter.Size = new System.Drawing.Size(77, 25);
+            this.rbRegRenter.Size = new System.Drawing.Size(65, 21);
             this.rbRegRenter.TabIndex = 7;
             this.rbRegRenter.Text = "Renter";
             this.rbRegRenter.UseVisualStyleBackColor = true;
@@ -399,7 +399,7 @@
             this.rbRegTenant.Checked = true;
             this.rbRegTenant.Location = new System.Drawing.Point(7, 20);
             this.rbRegTenant.Name = "rbRegTenant";
-            this.rbRegTenant.Size = new System.Drawing.Size(86, 25);
+            this.rbRegTenant.Size = new System.Drawing.Size(70, 21);
             this.rbRegTenant.TabIndex = 6;
             this.rbRegTenant.TabStop = true;
             this.rbRegTenant.Text = "Student";
@@ -409,7 +409,7 @@
             // 
             this.tbRegPassword.Location = new System.Drawing.Point(214, 229);
             this.tbRegPassword.Name = "tbRegPassword";
-            this.tbRegPassword.Size = new System.Drawing.Size(293, 28);
+            this.tbRegPassword.Size = new System.Drawing.Size(293, 24);
             this.tbRegPassword.TabIndex = 4;
             this.tbRegPassword.UseSystemPasswordChar = true;
             this.tbRegPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRegPassword_KeyUp);
@@ -419,7 +419,7 @@
             this.lbRegPassword.AutoSize = true;
             this.lbRegPassword.Location = new System.Drawing.Point(36, 236);
             this.lbRegPassword.Name = "lbRegPassword";
-            this.lbRegPassword.Size = new System.Drawing.Size(77, 21);
+            this.lbRegPassword.Size = new System.Drawing.Size(61, 17);
             this.lbRegPassword.TabIndex = 13;
             this.lbRegPassword.Text = "Password";
             // 
@@ -427,7 +427,7 @@
             // 
             this.tbRegEmail.Location = new System.Drawing.Point(214, 87);
             this.tbRegEmail.Name = "tbRegEmail";
-            this.tbRegEmail.Size = new System.Drawing.Size(293, 28);
+            this.tbRegEmail.Size = new System.Drawing.Size(293, 24);
             this.tbRegEmail.TabIndex = 2;
             this.tbRegEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRegEmail_KeyUp);
             // 
@@ -436,16 +436,16 @@
             this.lbRegEmail.AutoSize = true;
             this.lbRegEmail.Location = new System.Drawing.Point(36, 94);
             this.lbRegEmail.Name = "lbRegEmail";
-            this.lbRegEmail.Size = new System.Drawing.Size(48, 21);
+            this.lbRegEmail.Size = new System.Drawing.Size(39, 17);
             this.lbRegEmail.TabIndex = 10;
             this.lbRegEmail.Text = "Email";
             // 
             // IndexForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(782, 553);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tabControlIndex);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
