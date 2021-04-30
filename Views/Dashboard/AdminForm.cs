@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
-namespace HousingManagementSystemForAIUBStudents.Views
+namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 {
-    public partial class AdminDashboardForm : Form
+    public partial class AdminForm : Form
     {
-        public AdminDashboardForm()
+        public AdminForm()
         {
             InitializeComponent();
         }
