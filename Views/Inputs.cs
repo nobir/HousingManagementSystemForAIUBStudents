@@ -15,11 +15,20 @@ namespace HousingManagementSystemForAIUBStudents.Views
     enum Inputs
     {
         Name,
+
+        LoginEmail,
+        RegEmail,
         SearchUserEmail,
         DeleteUserEmail,
-        Email,
+
         Phone,
-        Password,
+
+        LoginPassword,
+        RegPassword,
+
         ConfirmPassword,
+
+        LoginButton,
+        RegButton
     }
 }
