@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 {
@@ -25,5 +26,427 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                 Application.Exit();
             }
         }
+
+
+        /**
+         * Set the Enable properties of Login Button
+         * depending on the validation
+         * if the all the inputs are
+         * valid then Enable properties set to True
+         * otherwise False
+         * 
+         * @return void
+         */
+
+        private void _SetButtonEnableProperties(Button btn, Inputs inputs)
+        {
+            switch (inputs)
+            {
+                case Inputs.TenantEditButton:
+
+                    btn.Enabled = (this._IsTenantNameValid() && this._IsEmailValid(tbEditEmail) && this._IsTenantPhoneValid());
+
+                    break;
+                case Inputs.TenantSearchButton:
+
+                    btn.Enabled = (this._IsHouseIdValid(tbViewHouseId));
+
+                    break;
+                case Inputs.TenantRentButton:
+
+                    btn.Enabled = (this._IsHouseIdValid(tbRentHouseId));
+
+                    break;
+            }
+        }
+
+
+        /**
+         * Show the Error message on inputs
+         * bellow if any error message have
+         * 
+         * @return void
+         */
+
+        private void _ShowErrorMessage(Inputs input, ref Label errLable, ref string errorMessage)
+        {
+            switch (input)
+            {
+                case Inputs.TenantEditName:
+
+                    if (this._IsTenantNameValid())
+                    {
+                        errorMessage = "";
+                        errLable.Text = errorMessage;
+                    }
+                    else
+                    {
+                        errLable.Text = errorMessage;
+                    }
+
+                    break;
+                case Inputs.TenantEditEmail:
+
+                    if (this._IsEmailValid(tbEditEmail))
+                    {
+                        errorMessage = "";
+                        errLable.Text = errorMessage;
+                    }
+                    else
+                    {
+                        errLable.Text = errorMessage;
+                    }
+
+                    break;
+                case Inputs.TenantEditPhone:
+
+                    if (this._IsTenantPhoneValid())
+                    {
+                        errorMessage = "";
+                        errLable.Text = errorMessage;
+                    }
+                    else
+                    {
+                        errLable.Text = errorMessage;
+                    }
+
+                    break;
+                case Inputs.TenantViewHouseId:
+
+                    if (this._IsHouseIdValid(tbViewHouseId))
+                    {
+                        errorMessage = "";
+                        errLable.Text = errorMessage;
+                    }
+                    else
+                    {
+                        errLable.Text = errorMessage;
+                    }
+
+                    break;
+                case Inputs.TenantRentHouseId:
+
+                    if (this._IsHouseIdValid(tbRentHouseId))
+                    {
+                        errorMessage = "";
+                        errLable.Text = errorMessage;
+                    }
+                    else
+                    {
+                        errLable.Text = errorMessage;
+                    }
+
+                    break;
+            }
+
+        }
+
+
+        /**
+         * Check the Email if it's valid or not
+         * Tried on
+         * @link https://regexr.com/5r0tf
+         * 
+         * @return boolean
+         */
+
+        private bool _IsEmailValid(TextBox tb)
+        {
+            string email = tb.Text.Trim();
+            return (email.Length != 0 && Regex.IsMatch(email, @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+(?:\.[a-zA-Z0-9-]+)*$"));
+        }
+
+
+        /**
+         * Is House ID valid or not
+         * Condition -> not empty, numeric
+         * Tried on
+         * @link https://regexr.com/5s15f
+         * 
+         * @return boolean
+         */
+
+        private bool _IsHouseIdValid(TextBox tb)
+        {
+            string houseId = tb.Text.Trim();
+            return (houseId.Length != 0 && Regex.IsMatch(houseId, @"^[0-9]+$"));
+        }
+
+
+        #region Edit Profile
+
+        ////////////////////////////////////////////
+        ////        Edit Profile Form          /////
+        ////////////////////////////////////////////
+
+
+        /**
+         * Is Name valid or not
+         * Condition -> not empty, larger than 2 char, alphanumeric with -, _
+         * Tried on
+         * @link https://regexr.com/5rvjm
+         * 
+         * @return boolean
+         */
+
+        private bool _IsTenantNameValid()
+        {
+            string name = tbEditName.Text.Trim();
+            return (name.Length > 2 && Regex.IsMatch(name, @"^[a-zA-Z0-9-_]+$"));
+        }
+
+
+        /**
+         * Is Phone valid or not
+         * Condition -> not empty, valid bd phone
+         * Tried on
+         * @link https://regexr.com/5rvf6
+         * 
+         * @return boolean
+         */
+
+        private bool _IsTenantPhoneValid()
+        {
+            string phone = tbEditPhone.Text.Trim();
+            return (phone.Length != 0 && Regex.IsMatch(phone,@"^(\+8801[2-9]\d{1}[0-9]\d{6})$"));
+        }
+
+
+        /**
+         * Check the Name
+         * and show the Error message
+         * in the Form page
+         * if any Error message have
+         * 
+         * @return void
+         */
+
+        private void _CheckTenantNameValidation()
+        {
+            string errorMessage = "";
+            string name = tbEditName.Text.Trim();
+
+            if (name.Length == 0)
+            {
+                errorMessage += "Name can't be empty\n";
+            }
+
+            if (name.Length < 3 && name.Length != 0)
+            {
+                errorMessage += "Name must be larger than 2 character\n";
+            }
+
+            if (!Regex.IsMatch(name, @"^([a-zA-Z0-9-_])+$") && name.Length != 0)
+            {
+                errorMessage += "Name must be alphaneumeric, dash(-) and underscore(_) \n";
+            }
+
+            this._ShowErrorMessage(Inputs.TenantEditName, ref errMsgEditName, ref errorMessage);
+
+            this._SetButtonEnableProperties(btnEditProfile, Inputs.TenantEditButton);
+        }
+
+
+        /**
+         * Check the Email
+         * and show the Error message
+         * in the Form page
+         * if any Error message have
+         * 
+         * @return void
+         */
+
+        private void _CheckTenantEmailValidation()
+        {
+            string errorMessage = "";
+            string email = tbEditEmail.Text.Trim();
+
+            if (email.Length == 0)
+            {
+                errorMessage += "Email can't be empty\n";
+            }
+
+            if (!Regex.IsMatch(email, @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+(?:\.[a-zA-Z0-9-]+)*$") && email.Length != 0)
+            {
+                errorMessage += "Email is not valid e.g admin@admin.com\n";
+            }
+
+            this._ShowErrorMessage(Inputs.TenantEditEmail, ref errMsgEditEmail, ref errorMessage);
+
+            this._SetButtonEnableProperties(btnEditProfile, Inputs.TenantEditButton);
+        }
+
+
+        /**
+         * Check the Phone
+         * and show the Error message
+         * in the Form page
+         * if any Error message have
+         * 
+         * @return void
+         */
+
+        private void _CheckTenantPhoneValidation()
+        {
+            string errorMessage = "";
+            string phone = tbEditPhone.Text.Trim();
+
+            if (phone.Length == 0)
+            {
+                errorMessage += "Phone Number can't be empty\n";
+            }
+
+            if (!Regex.IsMatch(phone, @"^(\+8801[2-9]\d{1}[0-9]\d{6})$") && phone.Length != 0)
+            {
+                errorMessage += "Phone Number is not valid e.g +8801628769304\n";
+            }
+
+            this._ShowErrorMessage(Inputs.TenantEditPhone, ref errMsgEditPhone, ref errorMessage);
+
+            this._SetButtonEnableProperties(btnEditProfile, Inputs.TenantEditButton);
+        }
+
+        private void tbEditName_KeyUp(object sender, KeyEventArgs e)
+        {
+            this._CheckTenantNameValidation();
+        }
+
+        private void tbEditEmail_KeyUp(object sender, KeyEventArgs e)
+        {
+            this._CheckTenantEmailValidation();
+        }
+
+        private void tbEditPhone_KeyUp(object sender, KeyEventArgs e)
+        {
+            this._CheckTenantPhoneValidation();
+        }
+
+        private void btnEditProfile_Click(object sender, EventArgs e)
+        {
+            if (!this._IsTenantNameValid() || !this._IsEmailValid(tbEditEmail) || !this._IsTenantPhoneValid())
+            {
+                this._CheckTenantNameValidation();
+                this._CheckTenantEmailValidation();
+                this._CheckTenantPhoneValidation();
+
+                return;
+            }
+
+            // Start Database Editing process
+        }
+
+        #endregion
+
+
+        #region View House
+
+        //////////////////////////////////////////
+        ////        View House Form          /////
+        //////////////////////////////////////////
+
+
+        /**
+         * Check the View House ID
+         * and show the Error message
+         * in the Form page
+         * if any Error message have
+         * 
+         * @return void
+         */
+
+        private void _CheckViewHouseIdValidation()
+        {
+            string errorMessage = "";
+            string houseId = tbViewHouseId.Text.Trim();
+
+            if (houseId.Length == 0)
+            {
+                errorMessage += "House ID can't be empty\n";
+            }
+
+            if (!Regex.IsMatch(houseId, @"^[0-9]+$") && houseId.Length != 0)
+            {
+                errorMessage += "House ID must be Numeric\n";
+            }
+
+            this._ShowErrorMessage(Inputs.TenantViewHouseId, ref errMsgViewHouseId, ref errorMessage);
+
+            this._SetButtonEnableProperties(btnViewHouse, Inputs.TenantSearchButton);
+        }
+
+        private void tbViewHouseId_KeyUp(object sender, KeyEventArgs e)
+        {
+            this._CheckViewHouseIdValidation();
+        }
+
+        private void btnViewHouse_Click(object sender, EventArgs e)
+        {
+            if (this._IsHouseIdValid(tbViewHouseId))
+            {
+                this._CheckViewHouseIdValidation();
+
+                return;
+            }
+
+            // Start Database Searching process
+        }
+
+        #endregion
+
+
+        #region Rent House
+
+        //////////////////////////////////////////
+        ////        Rent House Form          /////
+        //////////////////////////////////////////
+
+
+        /**
+         * Check the Rent House ID
+         * and show the Error message
+         * in the Form page
+         * if any Error message have
+         * 
+         * @return void
+         */
+
+        private void _CheckRentHouseIdValidation()
+        {
+            string errorMessage = "";
+            string houseId = tbRentHouseId.Text.Trim();
+
+            if (houseId.Length == 0)
+            {
+                errorMessage += "House ID can't be empty\n";
+            }
+
+            if (!Regex.IsMatch(houseId, @"^[0-9]+$") && houseId.Length != 0)
+            {
+                errorMessage += "House ID must be Numeric\n";
+            }
+
+            this._ShowErrorMessage(Inputs.TenantRentHouseId, ref errMsgRentHouseId, ref errorMessage);
+
+            this._SetButtonEnableProperties(btnRentHouse, Inputs.TenantRentButton);
+        }
+
+        private void tbRentHouseId_KeyUp(object sender, KeyEventArgs e)
+        {
+            this._CheckRentHouseIdValidation();
+        }
+
+        private void btnRentHouse_Click(object sender, EventArgs e)
+        {
+            if (this._IsHouseIdValid(tbRentHouseId))
+            {
+                this._CheckRentHouseIdValidation();
+
+                return;
+            }
+
+            // Start Database Renting process
+        }
+
+        #endregion
     }
 }

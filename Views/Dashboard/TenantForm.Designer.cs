@@ -103,6 +103,7 @@
             this.btnEditProfile.TabIndex = 4;
             this.btnEditProfile.Text = "Edit";
             this.btnEditProfile.UseVisualStyleBackColor = true;
+            this.btnEditProfile.Click += new System.EventHandler(this.btnEditProfile_Click);
             // 
             // errMsgEditPhone
             // 
@@ -120,6 +121,7 @@
             this.tbEditPhone.Name = "tbEditPhone";
             this.tbEditPhone.Size = new System.Drawing.Size(293, 28);
             this.tbEditPhone.TabIndex = 3;
+            this.tbEditPhone.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbEditPhone_KeyUp);
             // 
             // lbEditPhone
             // 
@@ -146,6 +148,7 @@
             this.tbEditName.Name = "tbEditName";
             this.tbEditName.Size = new System.Drawing.Size(293, 28);
             this.tbEditName.TabIndex = 1;
+            this.tbEditName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbEditName_KeyUp);
             // 
             // lbEditName
             // 
@@ -172,6 +175,7 @@
             this.tbEditEmail.Name = "tbEditEmail";
             this.tbEditEmail.Size = new System.Drawing.Size(293, 28);
             this.tbEditEmail.TabIndex = 2;
+            this.tbEditEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbEditEmail_KeyUp);
             // 
             // lbEditEmail
             // 
@@ -226,6 +230,7 @@
             this.tbViewHouseId.Name = "tbViewHouseId";
             this.tbViewHouseId.Size = new System.Drawing.Size(293, 28);
             this.tbViewHouseId.TabIndex = 30;
+            this.tbViewHouseId.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbViewHouseId_KeyUp);
             // 
             // lbViewHouseId
             // 
@@ -245,6 +250,7 @@
             this.btnViewHouse.TabIndex = 31;
             this.btnViewHouse.Text = "Search";
             this.btnViewHouse.UseVisualStyleBackColor = true;
+            this.btnViewHouse.Click += new System.EventHandler(this.btnViewHouse_Click);
             // 
             // dgvViewHouse
             // 
@@ -298,6 +304,7 @@
             this.tbRentHouseId.Name = "tbRentHouseId";
             this.tbRentHouseId.Size = new System.Drawing.Size(293, 28);
             this.tbRentHouseId.TabIndex = 23;
+            this.tbRentHouseId.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRentHouseId_KeyUp);
             // 
             // lbRentHouseId
             // 
@@ -317,6 +324,7 @@
             this.btnRentHouse.TabIndex = 25;
             this.btnRentHouse.Text = "Rent";
             this.btnRentHouse.UseVisualStyleBackColor = true;
+            this.btnRentHouse.Click += new System.EventHandler(this.btnRentHouse_Click);
             // 
             // TenantForm
             // 
