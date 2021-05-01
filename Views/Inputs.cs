@@ -9,7 +9,10 @@ namespace HousingManagementSystemForAIUBStudents.Views
     enum Inputs
     {
         AdminSearchUserEmail,
+        AdminSarchUserButton,
+
         AdminDeleteUserEmail,
+        AdminDeleteUserButton,
 
         IndexLoginEmail,
         IndexLoginPassword,

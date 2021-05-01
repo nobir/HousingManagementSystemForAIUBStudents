@@ -42,12 +42,12 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         {
             switch(input)
             {
-                case Inputs.AdminSearchUserEmail:
+                case Inputs.AdminSarchUserButton:
 
                     btn.Enabled = (this._IsEmailValid(tbAdminSearchUserEmail));
 
                     break;
-                case Inputs.AdminDeleteUserEmail:
+                case Inputs.AdminDeleteUserButton:
 
                     btn.Enabled = (this._IsEmailValid(tbAdminDeleteUserEmail));
 
@@ -146,7 +146,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 
             this._ShowErrorMessage(Inputs.AdminSearchUserEmail, ref errMsgAdminSearchUserEmail, ref errorMessage);
 
-            this._SetLoginButtonEnableProperties(btnAdminSearchUser, Inputs.AdminSearchUserEmail);
+            this._SetLoginButtonEnableProperties(btnAdminSearchUser, Inputs.AdminSarchUserButton);
         }
 
 
@@ -202,7 +202,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 
             this._ShowErrorMessage(Inputs.AdminDeleteUserEmail, ref errMsgAdminDeleteUserEmail, ref errorMessage);
 
-            this._SetLoginButtonEnableProperties(btnAdminDeleteUser, Inputs.AdminDeleteUserEmail);
+            this._SetLoginButtonEnableProperties(btnAdminDeleteUser, Inputs.AdminDeleteUserButton);
         }
 
         private void tbDeleteUserEmail_KeyUp(object sender, KeyEventArgs e)
