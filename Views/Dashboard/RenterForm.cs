@@ -18,7 +18,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             InitializeComponent();
         }
 
-        protected void OnFormClosing(FormClosingEventArgs e)
+        override protected void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
             if (e.CloseReason != CloseReason.WindowsShutDown)
