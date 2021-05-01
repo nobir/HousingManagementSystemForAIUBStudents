@@ -60,6 +60,12 @@
     <Compile Include="Views\Dashboard\RenterForm.Designer.cs">
       <DependentUpon>RenterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dashboard\TenantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\TenantForm.Designer.cs">
+      <DependentUpon>TenantForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\IndexForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\RenterForm.resx">
       <DependentUpon>RenterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\TenantForm.resx">
+      <DependentUpon>TenantForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\IndexForm.resx">
       <DependentUpon>IndexForm.cs</DependentUpon>
