@@ -332,7 +332,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
         private bool _IsRegistrationPasswordValid()
         {
             string password = tbIndexRegPassword.Text.Trim();
-            return (password.Length != 0 && password.Length > 7 && Regex.IsMatch(password, @"[!@#$%]+"));
+            return (password.Length != 0 && password.Length > 7 && Regex.IsMatch(password, @"[!@#$%]+") && this._IsRegistrationConfirmPasswordValid());
         }
 
 
@@ -477,6 +477,8 @@ namespace HousingManagementSystemForAIUBStudents.Views
             this._ShowErrorMessage(Inputs.IndexRegPassword, ref errMsgIndexRegPassword, ref errorMessage);
 
             this._SetButtonEnableProperties(btnIndexRegistration, Inputs.IndexRegButton);
+
+            this._CheckRegistrationConfirmPasswordValidation();
         }
 
 

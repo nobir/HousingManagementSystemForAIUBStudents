@@ -418,7 +418,7 @@
             this.lbRenterAddHouseNumber.Name = "lbRenterAddHouseNumber";
             this.lbRenterAddHouseNumber.Size = new System.Drawing.Size(115, 21);
             this.lbRenterAddHouseNumber.TabIndex = 30;
-            this.lbRenterAddHouseNumber.Text = "House Numebr";
+            this.lbRenterAddHouseNumber.Text = "House Number";
             // 
             // tabRenterDeleteHouse
             // 
