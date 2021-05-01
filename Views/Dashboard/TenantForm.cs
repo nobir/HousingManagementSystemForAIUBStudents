@@ -192,7 +192,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         private bool _IsTenantNameValid()
         {
             string name = tbTenantEditName.Text.Trim();
-            return (name.Length > 2 && Regex.IsMatch(name, @"^[a-zA-Z0-9-_]+$"));
+            return (name.Length > 2 && Regex.IsMatch(name, @"^[a-zA-Z0-9\s-_]+$"));
         }
 
 
@@ -236,7 +236,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                 errorMessage += "Name must be larger than 2 character\n";
             }
 
-            if (!Regex.IsMatch(name, @"^([a-zA-Z0-9-_])+$") && name.Length != 0)
+            if (!Regex.IsMatch(name, @"^[a-zA-Z0-9\s-_]+$") && name.Length != 0)
             {
                 errorMessage += "Name must be alphaneumeric, dash(-) and underscore(_) \n";
             }

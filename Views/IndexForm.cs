@@ -299,7 +299,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
         private bool _IsRegistrationNameValid()
         {
             string name = tbIndexRegName.Text.Trim();
-            return (name.Length > 2 && Regex.IsMatch(name, @"^[a-zA-Z0-9-_]+$"));
+            return (name.Length > 2 && Regex.IsMatch(name, @"^[a-zA-Z0-9\s-_]+$"));
         }
 
 
@@ -375,7 +375,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
                 errorMessage += "Name must be larger than 2 character\n";
             }
 
-            if (!Regex.IsMatch(name, @"^([a-zA-Z0-9-_])+$") && name.Length != 0)
+            if (!Regex.IsMatch(name, @"^[a-zA-Z0-9\s-_]+$") && name.Length != 0)
             {
                 errorMessage += "Name must be alphaneumeric, dash(-) and underscore(_) \n";
             }
