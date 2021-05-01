@@ -42,12 +42,12 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         {
             switch(input)
             {
-                case Inputs.SearchUserEmail:
+                case Inputs.AdminSearchUserEmail:
 
                     btn.Enabled = (this._IsEmailValid(tbSearchUserEmail));
 
                     break;
-                case Inputs.DeleteUserEmail:
+                case Inputs.AdminDeleteUserEmail:
 
                     btn.Enabled = (this._IsEmailValid(tbDeleteUserEmail));
 
@@ -67,7 +67,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         {
             switch (input)
             {
-                case Inputs.SearchUserEmail:
+                case Inputs.AdminSearchUserEmail:
 
                     if (this._IsEmailValid(tbSearchUserEmail))
                     {
@@ -80,7 +80,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                     }
 
                     break;
-                case Inputs.DeleteUserEmail:
+                case Inputs.AdminDeleteUserEmail:
 
                     if (this._IsEmailValid(tbDeleteUserEmail))
                     {
@@ -144,9 +144,9 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                 errorMessage += "Email is not valid\n";
             }
 
-            this._ShowErrorMessage(Inputs.SearchUserEmail, ref errMsgSearchUserEmail, ref errorMessage);
+            this._ShowErrorMessage(Inputs.AdminSearchUserEmail, ref errMsgSearchUserEmail, ref errorMessage);
 
-            this._SetLoginButtonEnableProperties(btnSearchUser, Inputs.SearchUserEmail);
+            this._SetLoginButtonEnableProperties(btnSearchUser, Inputs.AdminSearchUserEmail);
         }
 
 
@@ -200,9 +200,9 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                 errorMessage += "Email is not valid\n";
             }
 
-            this._ShowErrorMessage(Inputs.DeleteUserEmail, ref errMsgDeleteUserEmail, ref errorMessage);
+            this._ShowErrorMessage(Inputs.AdminDeleteUserEmail, ref errMsgDeleteUserEmail, ref errorMessage);
 
-            this._SetLoginButtonEnableProperties(btnDeleteUser, Inputs.DeleteUserEmail);
+            this._SetLoginButtonEnableProperties(btnDeleteUser, Inputs.AdminDeleteUserEmail);
         }
 
         private void tbDeleteUserEmail_KeyUp(object sender, KeyEventArgs e)

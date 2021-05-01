@@ -41,12 +41,12 @@ namespace HousingManagementSystemForAIUBStudents.Views
         private void _SetButtonEnableProperties(Button btn, Inputs inputs)
         {
             switch(inputs) {
-                case Inputs.LoginButton:
+                case Inputs.IndexLoginButton:
 
                     btn.Enabled = (this._IsEmailValid(tbLoginEmail) && this._IsLoginPasswordValid());
 
                     break;
-                case Inputs.RegButton:
+                case Inputs.IndexRegButton:
 
                     btn.Enabled = (this._IsRegistrationNameValid() && this._IsEmailValid(tbRegEmail) && this._IsRegistrationPhoneValid() && this._IsRegistrationPasswordValid() && this._IsRegistrationConfirmPasswordValid());
 
@@ -66,7 +66,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
         {
             switch (input)
             {
-                case Inputs.Name:
+                case Inputs.IndexRegName:
 
                     if (this._IsRegistrationNameValid())
                     {
@@ -79,7 +79,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
                     }
 
                     break;
-                case Inputs.LoginEmail:
+                case Inputs.IndexLoginEmail:
 
                     if (this._IsEmailValid(tbLoginEmail))
                     {
@@ -92,7 +92,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
                     }
 
                     break;
-                case Inputs.RegEmail:
+                case Inputs.IndexRegEmail:
 
                     if (this._IsEmailValid(tbRegEmail))
                     {
@@ -105,7 +105,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
                     }
 
                     break;
-                case Inputs.LoginPassword:
+                case Inputs.IndexLoginPassword:
 
                     if (this._IsLoginPasswordValid())
                     {
@@ -119,7 +119,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
                     break;
 
-                case Inputs.Phone:
+                case Inputs.IndexRegPhone:
 
                     if (this._IsRegistrationPhoneValid())
                     {
@@ -132,7 +132,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
                     }
 
                     break;
-                case Inputs.RegPassword:
+                case Inputs.IndexRegPassword:
 
                     if (this._IsRegistrationPasswordValid())
                     {
@@ -146,7 +146,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
                     break;
                     
-                case Inputs.ConfirmPassword:
+                case Inputs.IndexRegConfirmPassword:
 
                     if (this._IsRegistrationConfirmPasswordValid())
                     {
@@ -224,9 +224,9 @@ namespace HousingManagementSystemForAIUBStudents.Views
                 errorMessage += "Email is not valid\n";
             }
 
-            this._ShowErrorMessage(Inputs.LoginEmail, ref errMsgLoginEmail, ref errorMessage);
+            this._ShowErrorMessage(Inputs.IndexLoginEmail, ref errMsgLoginEmail, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnLogin, Inputs.LoginButton);
+            this._SetButtonEnableProperties(btnLogin, Inputs.IndexLoginButton);
         }
 
 
@@ -249,10 +249,10 @@ namespace HousingManagementSystemForAIUBStudents.Views
                 errorMessage += "Password can't be empty\n";
             }
 
-            this._ShowErrorMessage(Inputs.LoginPassword, ref errMsgLoginPassword, ref errorMessage);
+            this._ShowErrorMessage(Inputs.IndexLoginPassword, ref errMsgLoginPassword, ref errorMessage);
 
 
-            this._SetButtonEnableProperties(btnLogin, Inputs.LoginButton);
+            this._SetButtonEnableProperties(btnLogin, Inputs.IndexLoginButton);
         }
 
         private void tbLoginEmail_KeyUp(object sender, KeyEventArgs e)
@@ -380,9 +380,9 @@ namespace HousingManagementSystemForAIUBStudents.Views
                 errorMessage += "Name must be alphaneumeric, dash(-) and underscore(_) \n";
             }
 
-            this._ShowErrorMessage(Inputs.Name, ref errMsgRegName, ref errorMessage);
+            this._ShowErrorMessage(Inputs.IndexRegName, ref errMsgRegName, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnRegistration, Inputs.RegButton);
+            this._SetButtonEnableProperties(btnRegistration, Inputs.IndexRegButton);
         }
 
 
@@ -410,9 +410,9 @@ namespace HousingManagementSystemForAIUBStudents.Views
                 errorMessage += "Email is not valid e.g admin@admin.com\n";
             }
 
-            this._ShowErrorMessage(Inputs.RegEmail, ref errMsgRegEmail, ref errorMessage);
+            this._ShowErrorMessage(Inputs.IndexRegEmail, ref errMsgRegEmail, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnRegistration, Inputs.RegButton);
+            this._SetButtonEnableProperties(btnRegistration, Inputs.IndexRegButton);
         }
 
 
@@ -440,9 +440,9 @@ namespace HousingManagementSystemForAIUBStudents.Views
                 errorMessage += "Phone Number is not valid e.g +8801628769304\n";
             }
 
-            this._ShowErrorMessage(Inputs.Phone, ref errMsgRegPhone, ref errorMessage);
+            this._ShowErrorMessage(Inputs.IndexRegPhone, ref errMsgRegPhone, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnRegistration, Inputs.RegButton);
+            this._SetButtonEnableProperties(btnRegistration, Inputs.IndexRegButton);
         }
 
 
@@ -474,9 +474,9 @@ namespace HousingManagementSystemForAIUBStudents.Views
                 errorMessage += "Password must include at least one special characters (!, @, #, $, %)\n";
             }
 
-            this._ShowErrorMessage(Inputs.RegPassword, ref errMsgRegPassword, ref errorMessage);
+            this._ShowErrorMessage(Inputs.IndexRegPassword, ref errMsgRegPassword, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnRegistration, Inputs.RegButton);
+            this._SetButtonEnableProperties(btnRegistration, Inputs.IndexRegButton);
         }
 
 
@@ -507,9 +507,9 @@ namespace HousingManagementSystemForAIUBStudents.Views
                 errorMessage += "Confirm Password must match Password\n";
             }
 
-            this._ShowErrorMessage(Inputs.ConfirmPassword, ref errMsgRegConfirmPassword, ref errorMessage);
+            this._ShowErrorMessage(Inputs.IndexRegConfirmPassword, ref errMsgRegConfirmPassword, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnRegistration, Inputs.RegButton);
+            this._SetButtonEnableProperties(btnRegistration, Inputs.IndexRegButton);
         }
 
         private void tbRegName_KeyUp(object sender, KeyEventArgs e)
