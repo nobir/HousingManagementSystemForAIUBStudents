@@ -8,44 +8,46 @@ namespace HousingManagementSystemForAIUBStudents.Views
 {
     enum Inputs
     {
-        IndexRegName,
-        TenantEditName,
-        RenterEditName,
-        RenterAddHouseName,
-
-        IndexLoginEmail,
-        IndexRegEmail,
         AdminSearchUserEmail,
         AdminDeleteUserEmail,
-        TenantEditEmail,
-        RenterEditEmail,
 
-        IndexRegPhone,
-        TenantEditPhone,
-        RenterEditPhone,
-
+        IndexLoginEmail,
         IndexLoginPassword,
-        IndexRegPassword,
-
-        IndexRegConfirmPassword,
-
         IndexLoginButton,
+
+        IndexRegName,
+        IndexRegEmail,
+        IndexRegPhone,
+        IndexRegPassword,
+        IndexRegConfirmPassword,
         IndexRegButton,
+
+        TenantEditName,
+        TenantEditEmail,
+        TenantEditPhone,
         TenantEditButton,
-        TenantSearchButton,
-        TenantRentButton,
-        RenterEditButton,
-        RenterSearchHouseButton,
-        RenterAddHouseButton,
-        RenterDeleteHouseButton,
 
         TenantViewHouseId,
-        TenantRentHouseId,
-        RenterViewHouseId,
-        RenterDeleteHouseId,
+        TenantSearchButton,
 
-        RenterAddHouseSector,
+        TenantRentHouseId,
+        TenantRentButton,
+
+        RenterEditName,
+        RenterEditEmail,
+        RenterEditPhone,
+        RenterEditButton,
+
+        RenterViewHouseId,
+        RenterSearchHouseButton,
+
+        RenterAddHouseName,
         RenterAddHouseNumber,
-        RenterAddHousePrize
+        RenterAddHouseSector,
+        RenterAddHousePrize,
+        RenterAddHouseButton,
+
+        RenterDeleteHouseId,
+        RenterDeleteHouseButton,
     }
 }
