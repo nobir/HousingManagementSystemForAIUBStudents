@@ -6,25 +6,23 @@ using System.Threading.Tasks;
 
 namespace HousingManagementSystemForAIUBStudents.Views
 {
-    //enum LoginInputs
-    //{
-    //    Email,
-    //    Password,
-    //};
-
     enum Inputs
     {
         IndexRegName,
         TenantEditName,
+        RenterEditName,
+        RenterAddHouseName,
 
         IndexLoginEmail,
         IndexRegEmail,
         AdminSearchUserEmail,
         AdminDeleteUserEmail,
         TenantEditEmail,
+        RenterEditEmail,
 
         IndexRegPhone,
         TenantEditPhone,
+        RenterEditPhone,
 
         IndexLoginPassword,
         IndexRegPassword,
@@ -36,8 +34,18 @@ namespace HousingManagementSystemForAIUBStudents.Views
         TenantEditButton,
         TenantSearchButton,
         TenantRentButton,
+        RenterEditButton,
+        RenterSearchHouseButton,
+        RenterAddHouseButton,
+        RenterDeleteHouseButton,
 
         TenantViewHouseId,
-        TenantRentHouseId
+        TenantRentHouseId,
+        RenterViewHouseId,
+        RenterDeleteHouseId,
+
+        RenterAddHouseSector,
+        RenterAddHouseNumber,
+        RenterAddHousePrize
     }
 }

@@ -120,6 +120,7 @@
             this.tbRenterViewHouseId.Name = "tbRenterViewHouseId";
             this.tbRenterViewHouseId.Size = new System.Drawing.Size(293, 28);
             this.tbRenterViewHouseId.TabIndex = 30;
+            this.tbRenterViewHouseId.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRenterViewHouseId_KeyUp);
             // 
             // lbRenterViewHouseId
             // 
@@ -139,6 +140,7 @@
             this.btnRenterViewHouse.TabIndex = 31;
             this.btnRenterViewHouse.Text = "Search";
             this.btnRenterViewHouse.UseVisualStyleBackColor = true;
+            this.btnRenterViewHouse.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnRenterViewHouse_KeyUp);
             // 
             // dgvRenterViewHouse
             // 
@@ -194,6 +196,7 @@
             this.btnRenterEditProfile.TabIndex = 4;
             this.btnRenterEditProfile.Text = "Edit";
             this.btnRenterEditProfile.UseVisualStyleBackColor = true;
+            this.btnRenterEditProfile.Click += new System.EventHandler(this.btnRenterEditProfile_Click);
             // 
             // errMsgRenterEditPhone
             // 
@@ -211,6 +214,7 @@
             this.tbRenterEditPhone.Name = "tbRenterEditPhone";
             this.tbRenterEditPhone.Size = new System.Drawing.Size(293, 28);
             this.tbRenterEditPhone.TabIndex = 3;
+            this.tbRenterEditPhone.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRenterEditPhone_KeyUp);
             // 
             // lbRenterEditPhone
             // 
@@ -237,6 +241,7 @@
             this.tbRenterEditName.Name = "tbRenterEditName";
             this.tbRenterEditName.Size = new System.Drawing.Size(293, 28);
             this.tbRenterEditName.TabIndex = 1;
+            this.tbRenterEditName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRenterEditName_KeyUp);
             // 
             // lbRenterEditName
             // 
@@ -263,6 +268,7 @@
             this.tbRenterEditEmail.Name = "tbRenterEditEmail";
             this.tbRenterEditEmail.Size = new System.Drawing.Size(293, 28);
             this.tbRenterEditEmail.TabIndex = 2;
+            this.tbRenterEditEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRenterEditEmail_KeyUp);
             // 
             // lbRenterEditEmail
             // 
@@ -304,6 +310,7 @@
             this.btnRenterAddHouse.TabIndex = 5;
             this.btnRenterAddHouse.Text = "Add House";
             this.btnRenterAddHouse.UseVisualStyleBackColor = true;
+            this.btnRenterAddHouse.Click += new System.EventHandler(this.btnRenterAddHouse_Click);
             // 
             // errMsgRenterAddHousePrize
             // 
@@ -321,6 +328,7 @@
             this.tbRenterAddHousePrize.Name = "tbRenterAddHousePrize";
             this.tbRenterAddHousePrize.Size = new System.Drawing.Size(293, 28);
             this.tbRenterAddHousePrize.TabIndex = 4;
+            this.tbRenterAddHousePrize.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRenterAddHousePrize_KeyUp);
             // 
             // lbRenterAddHousePrize
             // 
@@ -347,6 +355,7 @@
             this.tbRenterAddHouseSector.Name = "tbRenterAddHouseSector";
             this.tbRenterAddHouseSector.Size = new System.Drawing.Size(293, 28);
             this.tbRenterAddHouseSector.TabIndex = 3;
+            this.tbRenterAddHouseSector.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRenterAddHouseSector_KeyUp);
             // 
             // lbRenterAddHouseSector
             // 
@@ -373,6 +382,7 @@
             this.tbRenterAddHouseName.Name = "tbRenterAddHouseName";
             this.tbRenterAddHouseName.Size = new System.Drawing.Size(293, 28);
             this.tbRenterAddHouseName.TabIndex = 1;
+            this.tbRenterAddHouseName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRenterAddHouseName_KeyUp);
             // 
             // lbRenterAddHouseName
             // 
@@ -399,6 +409,7 @@
             this.tbRenterAddHouseNumber.Name = "tbRenterAddHouseNumber";
             this.tbRenterAddHouseNumber.Size = new System.Drawing.Size(293, 28);
             this.tbRenterAddHouseNumber.TabIndex = 2;
+            this.tbRenterAddHouseNumber.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRenterAddHouseNumber_KeyUp);
             // 
             // lbRenterAddHouseNumber
             // 
@@ -451,6 +462,7 @@
             this.tbRenterDeleteHouseId.Name = "tbRenterDeleteHouseId";
             this.tbRenterDeleteHouseId.Size = new System.Drawing.Size(293, 28);
             this.tbRenterDeleteHouseId.TabIndex = 23;
+            this.tbRenterDeleteHouseId.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRenterDeleteHouseId_KeyUp);
             // 
             // lbRenterDeleteHouseId
             // 
@@ -470,6 +482,7 @@
             this.btnRenterDeleteHouse.TabIndex = 25;
             this.btnRenterDeleteHouse.Text = "Delete";
             this.btnRenterDeleteHouse.UseVisualStyleBackColor = true;
+            this.btnRenterDeleteHouse.Click += new System.EventHandler(this.btnRenterDeleteHouse_Click);
             // 
             // RenterForm
             // 
