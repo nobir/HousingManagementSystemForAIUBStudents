@@ -43,7 +43,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
             switch(inputs) {
                 case Inputs.IndexLoginButton:
 
-                    btn.Enabled = (this._IsEmailValid(tbIndexLoginEmail) && this._IsLoginPasswordValid());
+                    btn.Enabled = (this._IsEmailValid(tbIndexLoginEmail) && this._IsIndexLoginPasswordValid());
 
                     break;
                 case Inputs.IndexRegButton:
@@ -107,7 +107,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
                     break;
                 case Inputs.IndexLoginPassword:
 
-                    if (this._IsLoginPasswordValid())
+                    if (this._IsIndexLoginPasswordValid())
                     {
                         errorMessage = "";
                         errLable.Text = errorMessage;
@@ -181,9 +181,9 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         #region Login Form
 
-        /////////////////////////////////////
-        ////        Login Form          /////
-        /////////////////////////////////////
+        ////////////////////////////////////
+        ////        Login Form          ////
+        ////////////////////////////////////
 
 
         /**
@@ -193,7 +193,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
          * @return boolean
          */
 
-        private bool _IsLoginPasswordValid()
+        private bool _IsIndexLoginPasswordValid()
         {
             string password = tbIndexLoginPassword.Text.Trim();
             return (password.Length != 0);
@@ -209,7 +209,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
          * @return void
          */
 
-        private void _CheckLoginEmailValidation()
+        private void _CheckIndexLoginEmailValidation()
         {
             string errorMessage = "";
             string email = tbIndexLoginEmail.Text.Trim();
@@ -239,7 +239,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
          * @return void
          */
 
-        private void _CheckLoginPasswordValidation()
+        private void _CheckIndexLoginPasswordValidation()
         {
             string errorMessage = "";
             string password = tbIndexLoginPassword.Text.Trim();
@@ -257,20 +257,20 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         private void tbLoginEmail_KeyUp(object sender, KeyEventArgs e)
         {
-            this._CheckLoginEmailValidation();
+            this._CheckIndexLoginEmailValidation();
         }
 
         private void tbLoginPassword_KeyUp(object sender, KeyEventArgs e)
         {
-            this._CheckLoginPasswordValidation();
+            this._CheckIndexLoginPasswordValidation();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (!this._IsEmailValid(tbIndexLoginEmail) || !this._IsLoginPasswordValid())
+            if (!this._IsEmailValid(tbIndexLoginEmail) || !this._IsIndexLoginPasswordValid())
             {
-                this._CheckLoginEmailValidation();
-                this._CheckLoginPasswordValidation();
+                this._CheckIndexLoginEmailValidation();
+                this._CheckIndexLoginPasswordValidation();
 
                 return;
             }
@@ -282,9 +282,9 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         #region Registration Form
 
-        ////////////////////////////////////////////
-        ////        Registration Form          /////
-        ////////////////////////////////////////////
+        ///////////////////////////////////////////
+        ////        Registration Form          ////
+        ///////////////////////////////////////////
 
 
         /**
