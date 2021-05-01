@@ -30,38 +30,38 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.tabControlAdmin = new System.Windows.Forms.TabControl();
-            this.tabSearchUser = new System.Windows.Forms.TabPage();
-            this.errMsgSearchUser = new System.Windows.Forms.Label();
-            this.gbSearchUser = new System.Windows.Forms.GroupBox();
-            this.errMsgSearchUserEmail = new System.Windows.Forms.Label();
-            this.tbSearchUserEmail = new System.Windows.Forms.TextBox();
-            this.lbSearchUserEmail = new System.Windows.Forms.Label();
-            this.lbSearchUserType = new System.Windows.Forms.Label();
-            this.btnSearchUser = new System.Windows.Forms.Button();
-            this.gbLoginUserType = new System.Windows.Forms.GroupBox();
-            this.rbSearchUserRenter = new System.Windows.Forms.RadioButton();
-            this.rbSearchUserTenant = new System.Windows.Forms.RadioButton();
-            this.tabDeleteUser = new System.Windows.Forms.TabPage();
-            this.actionMsgDeleteUser = new System.Windows.Forms.Label();
-            this.errMsgDeleteUserEmail = new System.Windows.Forms.Label();
-            this.tbDeleteUserEmail = new System.Windows.Forms.TextBox();
-            this.lbDeleteUserEmail = new System.Windows.Forms.Label();
-            this.lbDeleteUserType = new System.Windows.Forms.Label();
-            this.btnDeleteUser = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbDeleteUserRenter = new System.Windows.Forms.RadioButton();
-            this.rbDeleteUserTenant = new System.Windows.Forms.RadioButton();
+            this.tabAdminSearchUser = new System.Windows.Forms.TabPage();
+            this.actionMsgAdminSearchUser = new System.Windows.Forms.Label();
+            this.gbAdminSearchUser = new System.Windows.Forms.GroupBox();
+            this.errMsgAdminSearchUserEmail = new System.Windows.Forms.Label();
+            this.tbAdminSearchUserEmail = new System.Windows.Forms.TextBox();
+            this.lbAdminSearchUserEmail = new System.Windows.Forms.Label();
+            this.lbAdminSearchUserType = new System.Windows.Forms.Label();
+            this.btnAdminSearchUser = new System.Windows.Forms.Button();
+            this.gbAdminSearchUserType = new System.Windows.Forms.GroupBox();
+            this.rbAdminSearchUserRenter = new System.Windows.Forms.RadioButton();
+            this.rbAdminSearchUserTenant = new System.Windows.Forms.RadioButton();
+            this.tabAdminDeleteUser = new System.Windows.Forms.TabPage();
+            this.actionMsgAdminDeleteUser = new System.Windows.Forms.Label();
+            this.errMsgAdminDeleteUserEmail = new System.Windows.Forms.Label();
+            this.tbAdminDeleteUserEmail = new System.Windows.Forms.TextBox();
+            this.lbAdminDeleteUserEmail = new System.Windows.Forms.Label();
+            this.lbAdminDeleteUserType = new System.Windows.Forms.Label();
+            this.btnAdminDeleteUser = new System.Windows.Forms.Button();
+            this.gbAdminDeleteUserType = new System.Windows.Forms.GroupBox();
+            this.rbAdminDeleteUserRenter = new System.Windows.Forms.RadioButton();
+            this.rbAdminDeleteUserTenant = new System.Windows.Forms.RadioButton();
             this.tabControlAdmin.SuspendLayout();
-            this.tabSearchUser.SuspendLayout();
-            this.gbLoginUserType.SuspendLayout();
-            this.tabDeleteUser.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.tabAdminSearchUser.SuspendLayout();
+            this.gbAdminSearchUserType.SuspendLayout();
+            this.tabAdminDeleteUser.SuspendLayout();
+            this.gbAdminDeleteUserType.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlAdmin
             // 
-            this.tabControlAdmin.Controls.Add(this.tabSearchUser);
-            this.tabControlAdmin.Controls.Add(this.tabDeleteUser);
+            this.tabControlAdmin.Controls.Add(this.tabAdminSearchUser);
+            this.tabControlAdmin.Controls.Add(this.tabAdminDeleteUser);
             this.tabControlAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlAdmin.Location = new System.Drawing.Point(4, 4);
             this.tabControlAdmin.Name = "tabControlAdmin";
@@ -71,235 +71,235 @@
             this.tabControlAdmin.TabIndex = 0;
             this.tabControlAdmin.TabStop = false;
             // 
-            // tabSearchUser
+            // tabAdminSearchUser
             // 
-            this.tabSearchUser.Controls.Add(this.errMsgSearchUser);
-            this.tabSearchUser.Controls.Add(this.gbSearchUser);
-            this.tabSearchUser.Controls.Add(this.errMsgSearchUserEmail);
-            this.tabSearchUser.Controls.Add(this.tbSearchUserEmail);
-            this.tabSearchUser.Controls.Add(this.lbSearchUserEmail);
-            this.tabSearchUser.Controls.Add(this.lbSearchUserType);
-            this.tabSearchUser.Controls.Add(this.btnSearchUser);
-            this.tabSearchUser.Controls.Add(this.gbLoginUserType);
-            this.tabSearchUser.Location = new System.Drawing.Point(4, 30);
-            this.tabSearchUser.Name = "tabSearchUser";
-            this.tabSearchUser.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSearchUser.Size = new System.Drawing.Size(766, 511);
-            this.tabSearchUser.TabIndex = 0;
-            this.tabSearchUser.Text = "Search User";
-            this.tabSearchUser.UseVisualStyleBackColor = true;
+            this.tabAdminSearchUser.Controls.Add(this.actionMsgAdminSearchUser);
+            this.tabAdminSearchUser.Controls.Add(this.gbAdminSearchUser);
+            this.tabAdminSearchUser.Controls.Add(this.errMsgAdminSearchUserEmail);
+            this.tabAdminSearchUser.Controls.Add(this.tbAdminSearchUserEmail);
+            this.tabAdminSearchUser.Controls.Add(this.lbAdminSearchUserEmail);
+            this.tabAdminSearchUser.Controls.Add(this.lbAdminSearchUserType);
+            this.tabAdminSearchUser.Controls.Add(this.btnAdminSearchUser);
+            this.tabAdminSearchUser.Controls.Add(this.gbAdminSearchUserType);
+            this.tabAdminSearchUser.Location = new System.Drawing.Point(4, 30);
+            this.tabAdminSearchUser.Name = "tabAdminSearchUser";
+            this.tabAdminSearchUser.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAdminSearchUser.Size = new System.Drawing.Size(766, 511);
+            this.tabAdminSearchUser.TabIndex = 0;
+            this.tabAdminSearchUser.Text = "Search User";
+            this.tabAdminSearchUser.UseVisualStyleBackColor = true;
             // 
-            // errMsgSearchUser
+            // actionMsgAdminSearchUser
             // 
-            this.errMsgSearchUser.AutoSize = true;
-            this.errMsgSearchUser.Font = new System.Drawing.Font("Calibri", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errMsgSearchUser.ForeColor = System.Drawing.Color.Red;
-            this.errMsgSearchUser.Location = new System.Drawing.Point(215, 211);
-            this.errMsgSearchUser.Name = "errMsgSearchUser";
-            this.errMsgSearchUser.Size = new System.Drawing.Size(192, 29);
-            this.errMsgSearchUser.TabIndex = 17;
-            this.errMsgSearchUser.Text = "User Not Found!!!";
-            this.errMsgSearchUser.Visible = false;
+            this.actionMsgAdminSearchUser.AutoSize = true;
+            this.actionMsgAdminSearchUser.Font = new System.Drawing.Font("Calibri", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actionMsgAdminSearchUser.ForeColor = System.Drawing.Color.Red;
+            this.actionMsgAdminSearchUser.Location = new System.Drawing.Point(215, 211);
+            this.actionMsgAdminSearchUser.Name = "actionMsgAdminSearchUser";
+            this.actionMsgAdminSearchUser.Size = new System.Drawing.Size(192, 29);
+            this.actionMsgAdminSearchUser.TabIndex = 17;
+            this.actionMsgAdminSearchUser.Text = "User Not Found!!!";
+            this.actionMsgAdminSearchUser.Visible = false;
             // 
-            // gbSearchUser
+            // gbAdminSearchUser
             // 
-            this.gbSearchUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gbSearchUser.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gbSearchUser.Location = new System.Drawing.Point(3, 265);
-            this.gbSearchUser.Name = "gbSearchUser";
-            this.gbSearchUser.Size = new System.Drawing.Size(760, 243);
-            this.gbSearchUser.TabIndex = 16;
-            this.gbSearchUser.TabStop = false;
-            this.gbSearchUser.Tag = "";
+            this.gbAdminSearchUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.gbAdminSearchUser.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gbAdminSearchUser.Location = new System.Drawing.Point(3, 265);
+            this.gbAdminSearchUser.Name = "gbAdminSearchUser";
+            this.gbAdminSearchUser.Size = new System.Drawing.Size(760, 243);
+            this.gbAdminSearchUser.TabIndex = 16;
+            this.gbAdminSearchUser.TabStop = false;
+            this.gbAdminSearchUser.Tag = "";
             // 
-            // errMsgSearchUserEmail
+            // errMsgAdminSearchUserEmail
             // 
-            this.errMsgSearchUserEmail.AutoSize = true;
-            this.errMsgSearchUserEmail.Font = new System.Drawing.Font("Calibri", 9.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errMsgSearchUserEmail.ForeColor = System.Drawing.Color.Red;
-            this.errMsgSearchUserEmail.Location = new System.Drawing.Point(155, 70);
-            this.errMsgSearchUserEmail.Name = "errMsgSearchUserEmail";
-            this.errMsgSearchUserEmail.Size = new System.Drawing.Size(0, 19);
-            this.errMsgSearchUserEmail.TabIndex = 15;
+            this.errMsgAdminSearchUserEmail.AutoSize = true;
+            this.errMsgAdminSearchUserEmail.Font = new System.Drawing.Font("Calibri", 9.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errMsgAdminSearchUserEmail.ForeColor = System.Drawing.Color.Red;
+            this.errMsgAdminSearchUserEmail.Location = new System.Drawing.Point(155, 70);
+            this.errMsgAdminSearchUserEmail.Name = "errMsgAdminSearchUserEmail";
+            this.errMsgAdminSearchUserEmail.Size = new System.Drawing.Size(0, 19);
+            this.errMsgAdminSearchUserEmail.TabIndex = 15;
             // 
-            // tbSearchUserEmail
+            // tbAdminSearchUserEmail
             // 
-            this.tbSearchUserEmail.Location = new System.Drawing.Point(159, 39);
-            this.tbSearchUserEmail.Name = "tbSearchUserEmail";
-            this.tbSearchUserEmail.Size = new System.Drawing.Size(293, 28);
-            this.tbSearchUserEmail.TabIndex = 1;
-            this.tbSearchUserEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearchUserEmail_KeyUp);
+            this.tbAdminSearchUserEmail.Location = new System.Drawing.Point(159, 39);
+            this.tbAdminSearchUserEmail.Name = "tbAdminSearchUserEmail";
+            this.tbAdminSearchUserEmail.Size = new System.Drawing.Size(293, 28);
+            this.tbAdminSearchUserEmail.TabIndex = 1;
+            this.tbAdminSearchUserEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearchUserEmail_KeyUp);
             // 
-            // lbSearchUserEmail
+            // lbAdminSearchUserEmail
             // 
-            this.lbSearchUserEmail.AutoSize = true;
-            this.lbSearchUserEmail.Location = new System.Drawing.Point(28, 46);
-            this.lbSearchUserEmail.Name = "lbSearchUserEmail";
-            this.lbSearchUserEmail.Size = new System.Drawing.Size(48, 21);
-            this.lbSearchUserEmail.TabIndex = 13;
-            this.lbSearchUserEmail.Text = "Email";
+            this.lbAdminSearchUserEmail.AutoSize = true;
+            this.lbAdminSearchUserEmail.Location = new System.Drawing.Point(28, 46);
+            this.lbAdminSearchUserEmail.Name = "lbAdminSearchUserEmail";
+            this.lbAdminSearchUserEmail.Size = new System.Drawing.Size(48, 21);
+            this.lbAdminSearchUserEmail.TabIndex = 13;
+            this.lbAdminSearchUserEmail.Text = "Email";
             // 
-            // lbSearchUserType
+            // lbAdminSearchUserType
             // 
-            this.lbSearchUserType.AutoSize = true;
-            this.lbSearchUserType.Location = new System.Drawing.Point(28, 137);
-            this.lbSearchUserType.Name = "lbSearchUserType";
-            this.lbSearchUserType.Size = new System.Drawing.Size(78, 21);
-            this.lbSearchUserType.TabIndex = 12;
-            this.lbSearchUserType.Text = "User Type";
+            this.lbAdminSearchUserType.AutoSize = true;
+            this.lbAdminSearchUserType.Location = new System.Drawing.Point(28, 137);
+            this.lbAdminSearchUserType.Name = "lbAdminSearchUserType";
+            this.lbAdminSearchUserType.Size = new System.Drawing.Size(78, 21);
+            this.lbAdminSearchUserType.TabIndex = 12;
+            this.lbAdminSearchUserType.Text = "User Type";
             // 
-            // btnSearchUser
+            // btnAdminSearchUser
             // 
-            this.btnSearchUser.Enabled = false;
-            this.btnSearchUser.Location = new System.Drawing.Point(544, 32);
-            this.btnSearchUser.Name = "btnSearchUser";
-            this.btnSearchUser.Size = new System.Drawing.Size(150, 35);
-            this.btnSearchUser.TabIndex = 5;
-            this.btnSearchUser.Text = "Search";
-            this.btnSearchUser.UseVisualStyleBackColor = true;
-            this.btnSearchUser.Click += new System.EventHandler(this.btnSearchUser_Click);
+            this.btnAdminSearchUser.Enabled = false;
+            this.btnAdminSearchUser.Location = new System.Drawing.Point(544, 32);
+            this.btnAdminSearchUser.Name = "btnAdminSearchUser";
+            this.btnAdminSearchUser.Size = new System.Drawing.Size(150, 35);
+            this.btnAdminSearchUser.TabIndex = 5;
+            this.btnAdminSearchUser.Text = "Search";
+            this.btnAdminSearchUser.UseVisualStyleBackColor = true;
+            this.btnAdminSearchUser.Click += new System.EventHandler(this.btnSearchUser_Click);
             // 
-            // gbLoginUserType
+            // gbAdminSearchUserType
             // 
-            this.gbLoginUserType.Controls.Add(this.rbSearchUserRenter);
-            this.gbLoginUserType.Controls.Add(this.rbSearchUserTenant);
-            this.gbLoginUserType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gbLoginUserType.Location = new System.Drawing.Point(159, 113);
-            this.gbLoginUserType.Name = "gbLoginUserType";
-            this.gbLoginUserType.Size = new System.Drawing.Size(269, 58);
-            this.gbLoginUserType.TabIndex = 2;
-            this.gbLoginUserType.TabStop = false;
+            this.gbAdminSearchUserType.Controls.Add(this.rbAdminSearchUserRenter);
+            this.gbAdminSearchUserType.Controls.Add(this.rbAdminSearchUserTenant);
+            this.gbAdminSearchUserType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gbAdminSearchUserType.Location = new System.Drawing.Point(159, 113);
+            this.gbAdminSearchUserType.Name = "gbAdminSearchUserType";
+            this.gbAdminSearchUserType.Size = new System.Drawing.Size(269, 58);
+            this.gbAdminSearchUserType.TabIndex = 2;
+            this.gbAdminSearchUserType.TabStop = false;
             // 
-            // rbSearchUserRenter
+            // rbAdminSearchUserRenter
             // 
-            this.rbSearchUserRenter.AutoSize = true;
-            this.rbSearchUserRenter.Location = new System.Drawing.Point(179, 20);
-            this.rbSearchUserRenter.Name = "rbSearchUserRenter";
-            this.rbSearchUserRenter.Size = new System.Drawing.Size(77, 25);
-            this.rbSearchUserRenter.TabIndex = 4;
-            this.rbSearchUserRenter.Text = "Renter";
-            this.rbSearchUserRenter.UseVisualStyleBackColor = true;
+            this.rbAdminSearchUserRenter.AutoSize = true;
+            this.rbAdminSearchUserRenter.Location = new System.Drawing.Point(179, 20);
+            this.rbAdminSearchUserRenter.Name = "rbAdminSearchUserRenter";
+            this.rbAdminSearchUserRenter.Size = new System.Drawing.Size(77, 25);
+            this.rbAdminSearchUserRenter.TabIndex = 4;
+            this.rbAdminSearchUserRenter.Text = "Renter";
+            this.rbAdminSearchUserRenter.UseVisualStyleBackColor = true;
             // 
-            // rbSearchUserTenant
+            // rbAdminSearchUserTenant
             // 
-            this.rbSearchUserTenant.AutoSize = true;
-            this.rbSearchUserTenant.Checked = true;
-            this.rbSearchUserTenant.Location = new System.Drawing.Point(7, 20);
-            this.rbSearchUserTenant.Name = "rbSearchUserTenant";
-            this.rbSearchUserTenant.Size = new System.Drawing.Size(86, 25);
-            this.rbSearchUserTenant.TabIndex = 3;
-            this.rbSearchUserTenant.TabStop = true;
-            this.rbSearchUserTenant.Text = "Student";
-            this.rbSearchUserTenant.UseVisualStyleBackColor = true;
+            this.rbAdminSearchUserTenant.AutoSize = true;
+            this.rbAdminSearchUserTenant.Checked = true;
+            this.rbAdminSearchUserTenant.Location = new System.Drawing.Point(7, 20);
+            this.rbAdminSearchUserTenant.Name = "rbAdminSearchUserTenant";
+            this.rbAdminSearchUserTenant.Size = new System.Drawing.Size(86, 25);
+            this.rbAdminSearchUserTenant.TabIndex = 3;
+            this.rbAdminSearchUserTenant.TabStop = true;
+            this.rbAdminSearchUserTenant.Text = "Student";
+            this.rbAdminSearchUserTenant.UseVisualStyleBackColor = true;
             // 
-            // tabDeleteUser
+            // tabAdminDeleteUser
             // 
-            this.tabDeleteUser.Controls.Add(this.actionMsgDeleteUser);
-            this.tabDeleteUser.Controls.Add(this.errMsgDeleteUserEmail);
-            this.tabDeleteUser.Controls.Add(this.tbDeleteUserEmail);
-            this.tabDeleteUser.Controls.Add(this.lbDeleteUserEmail);
-            this.tabDeleteUser.Controls.Add(this.lbDeleteUserType);
-            this.tabDeleteUser.Controls.Add(this.btnDeleteUser);
-            this.tabDeleteUser.Controls.Add(this.groupBox1);
-            this.tabDeleteUser.Location = new System.Drawing.Point(4, 30);
-            this.tabDeleteUser.Name = "tabDeleteUser";
-            this.tabDeleteUser.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDeleteUser.Size = new System.Drawing.Size(766, 511);
-            this.tabDeleteUser.TabIndex = 1;
-            this.tabDeleteUser.Text = "Delete User";
-            this.tabDeleteUser.UseVisualStyleBackColor = true;
+            this.tabAdminDeleteUser.Controls.Add(this.actionMsgAdminDeleteUser);
+            this.tabAdminDeleteUser.Controls.Add(this.errMsgAdminDeleteUserEmail);
+            this.tabAdminDeleteUser.Controls.Add(this.tbAdminDeleteUserEmail);
+            this.tabAdminDeleteUser.Controls.Add(this.lbAdminDeleteUserEmail);
+            this.tabAdminDeleteUser.Controls.Add(this.lbAdminDeleteUserType);
+            this.tabAdminDeleteUser.Controls.Add(this.btnAdminDeleteUser);
+            this.tabAdminDeleteUser.Controls.Add(this.gbAdminDeleteUserType);
+            this.tabAdminDeleteUser.Location = new System.Drawing.Point(4, 30);
+            this.tabAdminDeleteUser.Name = "tabAdminDeleteUser";
+            this.tabAdminDeleteUser.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAdminDeleteUser.Size = new System.Drawing.Size(766, 511);
+            this.tabAdminDeleteUser.TabIndex = 1;
+            this.tabAdminDeleteUser.Text = "Delete User";
+            this.tabAdminDeleteUser.UseVisualStyleBackColor = true;
             // 
-            // actionMsgDeleteUser
+            // actionMsgAdminDeleteUser
             // 
-            this.actionMsgDeleteUser.AutoSize = true;
-            this.actionMsgDeleteUser.Font = new System.Drawing.Font("Calibri", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actionMsgDeleteUser.ForeColor = System.Drawing.Color.Red;
-            this.actionMsgDeleteUser.Location = new System.Drawing.Point(215, 211);
-            this.actionMsgDeleteUser.Name = "actionMsgDeleteUser";
-            this.actionMsgDeleteUser.Size = new System.Drawing.Size(192, 29);
-            this.actionMsgDeleteUser.TabIndex = 22;
-            this.actionMsgDeleteUser.Text = "User Not Found!!!";
-            this.actionMsgDeleteUser.Visible = false;
+            this.actionMsgAdminDeleteUser.AutoSize = true;
+            this.actionMsgAdminDeleteUser.Font = new System.Drawing.Font("Calibri", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actionMsgAdminDeleteUser.ForeColor = System.Drawing.Color.Red;
+            this.actionMsgAdminDeleteUser.Location = new System.Drawing.Point(215, 211);
+            this.actionMsgAdminDeleteUser.Name = "actionMsgAdminDeleteUser";
+            this.actionMsgAdminDeleteUser.Size = new System.Drawing.Size(192, 29);
+            this.actionMsgAdminDeleteUser.TabIndex = 22;
+            this.actionMsgAdminDeleteUser.Text = "User Not Found!!!";
+            this.actionMsgAdminDeleteUser.Visible = false;
             // 
-            // errMsgDeleteUserEmail
+            // errMsgAdminDeleteUserEmail
             // 
-            this.errMsgDeleteUserEmail.AutoSize = true;
-            this.errMsgDeleteUserEmail.Font = new System.Drawing.Font("Calibri", 9.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errMsgDeleteUserEmail.ForeColor = System.Drawing.Color.Red;
-            this.errMsgDeleteUserEmail.Location = new System.Drawing.Point(155, 70);
-            this.errMsgDeleteUserEmail.Name = "errMsgDeleteUserEmail";
-            this.errMsgDeleteUserEmail.Size = new System.Drawing.Size(0, 19);
-            this.errMsgDeleteUserEmail.TabIndex = 21;
+            this.errMsgAdminDeleteUserEmail.AutoSize = true;
+            this.errMsgAdminDeleteUserEmail.Font = new System.Drawing.Font("Calibri", 9.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errMsgAdminDeleteUserEmail.ForeColor = System.Drawing.Color.Red;
+            this.errMsgAdminDeleteUserEmail.Location = new System.Drawing.Point(155, 70);
+            this.errMsgAdminDeleteUserEmail.Name = "errMsgAdminDeleteUserEmail";
+            this.errMsgAdminDeleteUserEmail.Size = new System.Drawing.Size(0, 19);
+            this.errMsgAdminDeleteUserEmail.TabIndex = 21;
             // 
-            // tbDeleteUserEmail
+            // tbAdminDeleteUserEmail
             // 
-            this.tbDeleteUserEmail.Location = new System.Drawing.Point(159, 39);
-            this.tbDeleteUserEmail.Name = "tbDeleteUserEmail";
-            this.tbDeleteUserEmail.Size = new System.Drawing.Size(293, 28);
-            this.tbDeleteUserEmail.TabIndex = 16;
-            this.tbDeleteUserEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbDeleteUserEmail_KeyUp);
+            this.tbAdminDeleteUserEmail.Location = new System.Drawing.Point(159, 39);
+            this.tbAdminDeleteUserEmail.Name = "tbAdminDeleteUserEmail";
+            this.tbAdminDeleteUserEmail.Size = new System.Drawing.Size(293, 28);
+            this.tbAdminDeleteUserEmail.TabIndex = 16;
+            this.tbAdminDeleteUserEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbDeleteUserEmail_KeyUp);
             // 
-            // lbDeleteUserEmail
+            // lbAdminDeleteUserEmail
             // 
-            this.lbDeleteUserEmail.AutoSize = true;
-            this.lbDeleteUserEmail.Location = new System.Drawing.Point(28, 46);
-            this.lbDeleteUserEmail.Name = "lbDeleteUserEmail";
-            this.lbDeleteUserEmail.Size = new System.Drawing.Size(48, 21);
-            this.lbDeleteUserEmail.TabIndex = 20;
-            this.lbDeleteUserEmail.Text = "Email";
+            this.lbAdminDeleteUserEmail.AutoSize = true;
+            this.lbAdminDeleteUserEmail.Location = new System.Drawing.Point(28, 46);
+            this.lbAdminDeleteUserEmail.Name = "lbAdminDeleteUserEmail";
+            this.lbAdminDeleteUserEmail.Size = new System.Drawing.Size(48, 21);
+            this.lbAdminDeleteUserEmail.TabIndex = 20;
+            this.lbAdminDeleteUserEmail.Text = "Email";
             // 
-            // lbDeleteUserType
+            // lbAdminDeleteUserType
             // 
-            this.lbDeleteUserType.AutoSize = true;
-            this.lbDeleteUserType.Location = new System.Drawing.Point(28, 137);
-            this.lbDeleteUserType.Name = "lbDeleteUserType";
-            this.lbDeleteUserType.Size = new System.Drawing.Size(78, 21);
-            this.lbDeleteUserType.TabIndex = 19;
-            this.lbDeleteUserType.Text = "User Type";
+            this.lbAdminDeleteUserType.AutoSize = true;
+            this.lbAdminDeleteUserType.Location = new System.Drawing.Point(28, 137);
+            this.lbAdminDeleteUserType.Name = "lbAdminDeleteUserType";
+            this.lbAdminDeleteUserType.Size = new System.Drawing.Size(78, 21);
+            this.lbAdminDeleteUserType.TabIndex = 19;
+            this.lbAdminDeleteUserType.Text = "User Type";
             // 
-            // btnDeleteUser
+            // btnAdminDeleteUser
             // 
-            this.btnDeleteUser.Enabled = false;
-            this.btnDeleteUser.Location = new System.Drawing.Point(544, 32);
-            this.btnDeleteUser.Name = "btnDeleteUser";
-            this.btnDeleteUser.Size = new System.Drawing.Size(150, 35);
-            this.btnDeleteUser.TabIndex = 18;
-            this.btnDeleteUser.Text = "Delete";
-            this.btnDeleteUser.UseVisualStyleBackColor = true;
-            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
+            this.btnAdminDeleteUser.Enabled = false;
+            this.btnAdminDeleteUser.Location = new System.Drawing.Point(544, 32);
+            this.btnAdminDeleteUser.Name = "btnAdminDeleteUser";
+            this.btnAdminDeleteUser.Size = new System.Drawing.Size(150, 35);
+            this.btnAdminDeleteUser.TabIndex = 18;
+            this.btnAdminDeleteUser.Text = "Delete";
+            this.btnAdminDeleteUser.UseVisualStyleBackColor = true;
+            this.btnAdminDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
-            // groupBox1
+            // gbAdminDeleteUserType
             // 
-            this.groupBox1.Controls.Add(this.rbDeleteUserRenter);
-            this.groupBox1.Controls.Add(this.rbDeleteUserTenant);
-            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.groupBox1.Location = new System.Drawing.Point(159, 113);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(269, 58);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
+            this.gbAdminDeleteUserType.Controls.Add(this.rbAdminDeleteUserRenter);
+            this.gbAdminDeleteUserType.Controls.Add(this.rbAdminDeleteUserTenant);
+            this.gbAdminDeleteUserType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gbAdminDeleteUserType.Location = new System.Drawing.Point(159, 113);
+            this.gbAdminDeleteUserType.Name = "gbAdminDeleteUserType";
+            this.gbAdminDeleteUserType.Size = new System.Drawing.Size(269, 58);
+            this.gbAdminDeleteUserType.TabIndex = 17;
+            this.gbAdminDeleteUserType.TabStop = false;
             // 
-            // rbDeleteUserRenter
+            // rbAdminDeleteUserRenter
             // 
-            this.rbDeleteUserRenter.AutoSize = true;
-            this.rbDeleteUserRenter.Location = new System.Drawing.Point(179, 20);
-            this.rbDeleteUserRenter.Name = "rbDeleteUserRenter";
-            this.rbDeleteUserRenter.Size = new System.Drawing.Size(77, 25);
-            this.rbDeleteUserRenter.TabIndex = 4;
-            this.rbDeleteUserRenter.Text = "Renter";
-            this.rbDeleteUserRenter.UseVisualStyleBackColor = true;
+            this.rbAdminDeleteUserRenter.AutoSize = true;
+            this.rbAdminDeleteUserRenter.Location = new System.Drawing.Point(179, 20);
+            this.rbAdminDeleteUserRenter.Name = "rbAdminDeleteUserRenter";
+            this.rbAdminDeleteUserRenter.Size = new System.Drawing.Size(77, 25);
+            this.rbAdminDeleteUserRenter.TabIndex = 4;
+            this.rbAdminDeleteUserRenter.Text = "Renter";
+            this.rbAdminDeleteUserRenter.UseVisualStyleBackColor = true;
             // 
-            // rbDeleteUserTenant
+            // rbAdminDeleteUserTenant
             // 
-            this.rbDeleteUserTenant.AutoSize = true;
-            this.rbDeleteUserTenant.Checked = true;
-            this.rbDeleteUserTenant.Location = new System.Drawing.Point(7, 20);
-            this.rbDeleteUserTenant.Name = "rbDeleteUserTenant";
-            this.rbDeleteUserTenant.Size = new System.Drawing.Size(86, 25);
-            this.rbDeleteUserTenant.TabIndex = 3;
-            this.rbDeleteUserTenant.TabStop = true;
-            this.rbDeleteUserTenant.Text = "Student";
-            this.rbDeleteUserTenant.UseVisualStyleBackColor = true;
+            this.rbAdminDeleteUserTenant.AutoSize = true;
+            this.rbAdminDeleteUserTenant.Checked = true;
+            this.rbAdminDeleteUserTenant.Location = new System.Drawing.Point(7, 20);
+            this.rbAdminDeleteUserTenant.Name = "rbAdminDeleteUserTenant";
+            this.rbAdminDeleteUserTenant.Size = new System.Drawing.Size(86, 25);
+            this.rbAdminDeleteUserTenant.TabIndex = 3;
+            this.rbAdminDeleteUserTenant.TabStop = true;
+            this.rbAdminDeleteUserTenant.Text = "Student";
+            this.rbAdminDeleteUserTenant.UseVisualStyleBackColor = true;
             // 
             // AdminForm
             // 
@@ -320,14 +320,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Dashbord | House Management System For AIUB Students";
             this.tabControlAdmin.ResumeLayout(false);
-            this.tabSearchUser.ResumeLayout(false);
-            this.tabSearchUser.PerformLayout();
-            this.gbLoginUserType.ResumeLayout(false);
-            this.gbLoginUserType.PerformLayout();
-            this.tabDeleteUser.ResumeLayout(false);
-            this.tabDeleteUser.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.tabAdminSearchUser.ResumeLayout(false);
+            this.tabAdminSearchUser.PerformLayout();
+            this.gbAdminSearchUserType.ResumeLayout(false);
+            this.gbAdminSearchUserType.PerformLayout();
+            this.tabAdminDeleteUser.ResumeLayout(false);
+            this.tabAdminDeleteUser.PerformLayout();
+            this.gbAdminDeleteUserType.ResumeLayout(false);
+            this.gbAdminDeleteUserType.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -336,26 +336,26 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControlAdmin;
-        private System.Windows.Forms.TabPage tabSearchUser;
-        private System.Windows.Forms.TabPage tabDeleteUser;
-        private System.Windows.Forms.Label lbSearchUserType;
-        private System.Windows.Forms.Button btnSearchUser;
-        private System.Windows.Forms.GroupBox gbLoginUserType;
-        private System.Windows.Forms.RadioButton rbSearchUserRenter;
-        private System.Windows.Forms.RadioButton rbSearchUserTenant;
-        private System.Windows.Forms.Label errMsgSearchUserEmail;
-        private System.Windows.Forms.TextBox tbSearchUserEmail;
-        private System.Windows.Forms.Label lbSearchUserEmail;
-        private System.Windows.Forms.Label errMsgDeleteUserEmail;
-        private System.Windows.Forms.TextBox tbDeleteUserEmail;
-        private System.Windows.Forms.Label lbDeleteUserEmail;
-        private System.Windows.Forms.Label lbDeleteUserType;
-        private System.Windows.Forms.Button btnDeleteUser;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbDeleteUserRenter;
-        private System.Windows.Forms.RadioButton rbDeleteUserTenant;
-        private System.Windows.Forms.GroupBox gbSearchUser;
-        private System.Windows.Forms.Label errMsgSearchUser;
-        private System.Windows.Forms.Label actionMsgDeleteUser;
+        private System.Windows.Forms.TabPage tabAdminSearchUser;
+        private System.Windows.Forms.TabPage tabAdminDeleteUser;
+        private System.Windows.Forms.Label lbAdminSearchUserType;
+        private System.Windows.Forms.Button btnAdminSearchUser;
+        private System.Windows.Forms.GroupBox gbAdminSearchUserType;
+        private System.Windows.Forms.RadioButton rbAdminSearchUserRenter;
+        private System.Windows.Forms.RadioButton rbAdminSearchUserTenant;
+        private System.Windows.Forms.Label errMsgAdminSearchUserEmail;
+        private System.Windows.Forms.TextBox tbAdminSearchUserEmail;
+        private System.Windows.Forms.Label lbAdminSearchUserEmail;
+        private System.Windows.Forms.Label errMsgAdminDeleteUserEmail;
+        private System.Windows.Forms.TextBox tbAdminDeleteUserEmail;
+        private System.Windows.Forms.Label lbAdminDeleteUserEmail;
+        private System.Windows.Forms.Label lbAdminDeleteUserType;
+        private System.Windows.Forms.Button btnAdminDeleteUser;
+        private System.Windows.Forms.GroupBox gbAdminDeleteUserType;
+        private System.Windows.Forms.RadioButton rbAdminDeleteUserRenter;
+        private System.Windows.Forms.RadioButton rbAdminDeleteUserTenant;
+        private System.Windows.Forms.GroupBox gbAdminSearchUser;
+        private System.Windows.Forms.Label actionMsgAdminSearchUser;
+        private System.Windows.Forms.Label actionMsgAdminDeleteUser;
     }
 }

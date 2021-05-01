@@ -44,17 +44,17 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             {
                 case Inputs.TenantEditButton:
 
-                    btn.Enabled = (this._IsTenantNameValid() && this._IsEmailValid(tbEditEmail) && this._IsTenantPhoneValid());
+                    btn.Enabled = (this._IsTenantNameValid() && this._IsEmailValid(tbTenantEditEmail) && this._IsTenantPhoneValid());
 
                     break;
                 case Inputs.TenantSearchButton:
 
-                    btn.Enabled = (this._IsHouseIdValid(tbViewHouseId));
+                    btn.Enabled = (this._IsHouseIdValid(tbTenantViewHouseId));
 
                     break;
                 case Inputs.TenantRentButton:
 
-                    btn.Enabled = (this._IsHouseIdValid(tbRentHouseId));
+                    btn.Enabled = (this._IsHouseIdValid(tbTenantRentHouseId));
 
                     break;
             }
@@ -87,7 +87,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                     break;
                 case Inputs.TenantEditEmail:
 
-                    if (this._IsEmailValid(tbEditEmail))
+                    if (this._IsEmailValid(tbTenantEditEmail))
                     {
                         errorMessage = "";
                         errLable.Text = errorMessage;
@@ -113,7 +113,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                     break;
                 case Inputs.TenantViewHouseId:
 
-                    if (this._IsHouseIdValid(tbViewHouseId))
+                    if (this._IsHouseIdValid(tbTenantViewHouseId))
                     {
                         errorMessage = "";
                         errLable.Text = errorMessage;
@@ -126,7 +126,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                     break;
                 case Inputs.TenantRentHouseId:
 
-                    if (this._IsHouseIdValid(tbRentHouseId))
+                    if (this._IsHouseIdValid(tbTenantRentHouseId))
                     {
                         errorMessage = "";
                         errLable.Text = errorMessage;
@@ -191,7 +191,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 
         private bool _IsTenantNameValid()
         {
-            string name = tbEditName.Text.Trim();
+            string name = tbTenantEditName.Text.Trim();
             return (name.Length > 2 && Regex.IsMatch(name, @"^[a-zA-Z0-9-_]+$"));
         }
 
@@ -207,7 +207,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 
         private bool _IsTenantPhoneValid()
         {
-            string phone = tbEditPhone.Text.Trim();
+            string phone = tbTenantEditPhone.Text.Trim();
             return (phone.Length != 0 && Regex.IsMatch(phone,@"^(\+8801[2-9]\d{1}[0-9]\d{6})$"));
         }
 
@@ -224,7 +224,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         private void _CheckTenantNameValidation()
         {
             string errorMessage = "";
-            string name = tbEditName.Text.Trim();
+            string name = tbTenantEditName.Text.Trim();
 
             if (name.Length == 0)
             {
@@ -241,9 +241,9 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                 errorMessage += "Name must be alphaneumeric, dash(-) and underscore(_) \n";
             }
 
-            this._ShowErrorMessage(Inputs.TenantEditName, ref errMsgEditName, ref errorMessage);
+            this._ShowErrorMessage(Inputs.TenantEditName, ref errMsgTenantEditName, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnEditProfile, Inputs.TenantEditButton);
+            this._SetButtonEnableProperties(btnTenantEditProfile, Inputs.TenantEditButton);
         }
 
 
@@ -259,7 +259,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         private void _CheckTenantEmailValidation()
         {
             string errorMessage = "";
-            string email = tbEditEmail.Text.Trim();
+            string email = tbTenantEditEmail.Text.Trim();
 
             if (email.Length == 0)
             {
@@ -271,9 +271,9 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                 errorMessage += "Email is not valid e.g admin@admin.com\n";
             }
 
-            this._ShowErrorMessage(Inputs.TenantEditEmail, ref errMsgEditEmail, ref errorMessage);
+            this._ShowErrorMessage(Inputs.TenantEditEmail, ref errMsgTenantEditEmail, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnEditProfile, Inputs.TenantEditButton);
+            this._SetButtonEnableProperties(btnTenantEditProfile, Inputs.TenantEditButton);
         }
 
 
@@ -289,7 +289,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         private void _CheckTenantPhoneValidation()
         {
             string errorMessage = "";
-            string phone = tbEditPhone.Text.Trim();
+            string phone = tbTenantEditPhone.Text.Trim();
 
             if (phone.Length == 0)
             {
@@ -301,9 +301,9 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                 errorMessage += "Phone Number is not valid e.g +8801628769304\n";
             }
 
-            this._ShowErrorMessage(Inputs.TenantEditPhone, ref errMsgEditPhone, ref errorMessage);
+            this._ShowErrorMessage(Inputs.TenantEditPhone, ref errMsgTenantEditPhone, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnEditProfile, Inputs.TenantEditButton);
+            this._SetButtonEnableProperties(btnTenantEditProfile, Inputs.TenantEditButton);
         }
 
         private void tbEditName_KeyUp(object sender, KeyEventArgs e)
@@ -323,7 +323,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 
         private void btnEditProfile_Click(object sender, EventArgs e)
         {
-            if (!this._IsTenantNameValid() || !this._IsEmailValid(tbEditEmail) || !this._IsTenantPhoneValid())
+            if (!this._IsTenantNameValid() || !this._IsEmailValid(tbTenantEditEmail) || !this._IsTenantPhoneValid())
             {
                 this._CheckTenantNameValidation();
                 this._CheckTenantEmailValidation();
@@ -357,7 +357,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         private void _CheckViewHouseIdValidation()
         {
             string errorMessage = "";
-            string houseId = tbViewHouseId.Text.Trim();
+            string houseId = tbTenantViewHouseId.Text.Trim();
 
             if (houseId.Length == 0)
             {
@@ -369,9 +369,9 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                 errorMessage += "House ID must be Numeric\n";
             }
 
-            this._ShowErrorMessage(Inputs.TenantViewHouseId, ref errMsgViewHouseId, ref errorMessage);
+            this._ShowErrorMessage(Inputs.TenantViewHouseId, ref errMsgTenantViewHouseId, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnViewHouse, Inputs.TenantSearchButton);
+            this._SetButtonEnableProperties(btnTenantViewHouse, Inputs.TenantSearchButton);
         }
 
         private void tbViewHouseId_KeyUp(object sender, KeyEventArgs e)
@@ -381,7 +381,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 
         private void btnViewHouse_Click(object sender, EventArgs e)
         {
-            if (this._IsHouseIdValid(tbViewHouseId))
+            if (this._IsHouseIdValid(tbTenantViewHouseId))
             {
                 this._CheckViewHouseIdValidation();
 
@@ -413,7 +413,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         private void _CheckRentHouseIdValidation()
         {
             string errorMessage = "";
-            string houseId = tbRentHouseId.Text.Trim();
+            string houseId = tbTenantRentHouseId.Text.Trim();
 
             if (houseId.Length == 0)
             {
@@ -425,9 +425,9 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                 errorMessage += "House ID must be Numeric\n";
             }
 
-            this._ShowErrorMessage(Inputs.TenantRentHouseId, ref errMsgRentHouseId, ref errorMessage);
+            this._ShowErrorMessage(Inputs.TenantRentHouseId, ref errMsgTenantRentHouseId, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnRentHouse, Inputs.TenantRentButton);
+            this._SetButtonEnableProperties(btnTenantRentHouse, Inputs.TenantRentButton);
         }
 
         private void tbRentHouseId_KeyUp(object sender, KeyEventArgs e)
@@ -437,7 +437,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 
         private void btnRentHouse_Click(object sender, EventArgs e)
         {
-            if (this._IsHouseIdValid(tbRentHouseId))
+            if (this._IsHouseIdValid(tbTenantRentHouseId))
             {
                 this._CheckRentHouseIdValidation();
 

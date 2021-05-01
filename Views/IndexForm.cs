@@ -43,12 +43,12 @@ namespace HousingManagementSystemForAIUBStudents.Views
             switch(inputs) {
                 case Inputs.IndexLoginButton:
 
-                    btn.Enabled = (this._IsEmailValid(tbLoginEmail) && this._IsLoginPasswordValid());
+                    btn.Enabled = (this._IsEmailValid(tbIndexLoginEmail) && this._IsLoginPasswordValid());
 
                     break;
                 case Inputs.IndexRegButton:
 
-                    btn.Enabled = (this._IsRegistrationNameValid() && this._IsEmailValid(tbRegEmail) && this._IsRegistrationPhoneValid() && this._IsRegistrationPasswordValid() && this._IsRegistrationConfirmPasswordValid());
+                    btn.Enabled = (this._IsRegistrationNameValid() && this._IsEmailValid(tbIndexRegEmail) && this._IsRegistrationPhoneValid() && this._IsRegistrationPasswordValid() && this._IsRegistrationConfirmPasswordValid());
 
                     break;
             }
@@ -81,7 +81,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
                     break;
                 case Inputs.IndexLoginEmail:
 
-                    if (this._IsEmailValid(tbLoginEmail))
+                    if (this._IsEmailValid(tbIndexLoginEmail))
                     {
                         errorMessage = "";
                         errLable.Text = errorMessage;
@@ -94,7 +94,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
                     break;
                 case Inputs.IndexRegEmail:
 
-                    if (this._IsEmailValid(tbRegEmail))
+                    if (this._IsEmailValid(tbIndexRegEmail))
                     {
                         errorMessage = "";
                         errLable.Text = errorMessage;
@@ -195,7 +195,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         private bool _IsLoginPasswordValid()
         {
-            string password = tbLoginPassword.Text.Trim();
+            string password = tbIndexLoginPassword.Text.Trim();
             return (password.Length != 0);
         }
 
@@ -212,7 +212,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
         private void _CheckLoginEmailValidation()
         {
             string errorMessage = "";
-            string email = tbLoginEmail.Text.Trim();
+            string email = tbIndexLoginEmail.Text.Trim();
 
             if (email.Length == 0)
             {
@@ -224,9 +224,9 @@ namespace HousingManagementSystemForAIUBStudents.Views
                 errorMessage += "Email is not valid\n";
             }
 
-            this._ShowErrorMessage(Inputs.IndexLoginEmail, ref errMsgLoginEmail, ref errorMessage);
+            this._ShowErrorMessage(Inputs.IndexLoginEmail, ref errMsgIndexLoginEmail, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnLogin, Inputs.IndexLoginButton);
+            this._SetButtonEnableProperties(btnIndexLogin, Inputs.IndexLoginButton);
         }
 
 
@@ -242,17 +242,17 @@ namespace HousingManagementSystemForAIUBStudents.Views
         private void _CheckLoginPasswordValidation()
         {
             string errorMessage = "";
-            string password = tbLoginPassword.Text.Trim();
+            string password = tbIndexLoginPassword.Text.Trim();
 
             if (password.Length == 0)
             {
                 errorMessage += "Password can't be empty\n";
             }
 
-            this._ShowErrorMessage(Inputs.IndexLoginPassword, ref errMsgLoginPassword, ref errorMessage);
+            this._ShowErrorMessage(Inputs.IndexLoginPassword, ref errMsgIndexLoginPassword, ref errorMessage);
 
 
-            this._SetButtonEnableProperties(btnLogin, Inputs.IndexLoginButton);
+            this._SetButtonEnableProperties(btnIndexLogin, Inputs.IndexLoginButton);
         }
 
         private void tbLoginEmail_KeyUp(object sender, KeyEventArgs e)
@@ -267,7 +267,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (!this._IsEmailValid(tbLoginEmail) || !this._IsLoginPasswordValid())
+            if (!this._IsEmailValid(tbIndexLoginEmail) || !this._IsLoginPasswordValid())
             {
                 this._CheckLoginEmailValidation();
                 this._CheckLoginPasswordValidation();
@@ -298,7 +298,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         private bool _IsRegistrationNameValid()
         {
-            string name = tbRegName.Text.Trim();
+            string name = tbIndexRegName.Text.Trim();
             return (name.Length > 2 && Regex.IsMatch(name, @"^[a-zA-Z0-9-_]+$"));
         }
 
@@ -314,7 +314,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         private bool _IsRegistrationPhoneValid()
         {
-            string phone = tbRegPhone.Text.Trim();
+            string phone = tbIndexRegPhone.Text.Trim();
             return (phone.Length != 0 && Regex.IsMatch(phone,@"^(\+8801[2-9]\d{1}[0-9]\d{6})$"));
         }
 
@@ -331,7 +331,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         private bool _IsRegistrationPasswordValid()
         {
-            string password = tbRegPassword.Text.Trim();
+            string password = tbIndexRegPassword.Text.Trim();
             return (password.Length != 0 && password.Length > 7 && Regex.IsMatch(password, @"[!@#$%]+"));
         }
 
@@ -345,8 +345,8 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         private bool _IsRegistrationConfirmPasswordValid()
         {
-            string password = tbRegPassword.Text.Trim();
-            string confirmPassword = tbRegConfirmPassword.Text.Trim();
+            string password = tbIndexRegPassword.Text.Trim();
+            string confirmPassword = tbIndexRegConfirmPassword.Text.Trim();
             return (confirmPassword.Length != 0 && confirmPassword.Equals(password));
         }
 
@@ -363,7 +363,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
         private void _CheckRegistrationNameValidation()
         {
             string errorMessage = "";
-            string name = tbRegName.Text.Trim();
+            string name = tbIndexRegName.Text.Trim();
 
             if (name.Length == 0)
             {
@@ -380,9 +380,9 @@ namespace HousingManagementSystemForAIUBStudents.Views
                 errorMessage += "Name must be alphaneumeric, dash(-) and underscore(_) \n";
             }
 
-            this._ShowErrorMessage(Inputs.IndexRegName, ref errMsgRegName, ref errorMessage);
+            this._ShowErrorMessage(Inputs.IndexRegName, ref errMsgIndexRegName, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnRegistration, Inputs.IndexRegButton);
+            this._SetButtonEnableProperties(btnIndexRegistration, Inputs.IndexRegButton);
         }
 
 
@@ -398,7 +398,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
         private void _CheckRegistrationEmailValidation()
         {
             string errorMessage = "";
-            string email = tbRegEmail.Text.Trim();
+            string email = tbIndexRegEmail.Text.Trim();
 
             if (email.Length == 0)
             {
@@ -410,9 +410,9 @@ namespace HousingManagementSystemForAIUBStudents.Views
                 errorMessage += "Email is not valid e.g admin@admin.com\n";
             }
 
-            this._ShowErrorMessage(Inputs.IndexRegEmail, ref errMsgRegEmail, ref errorMessage);
+            this._ShowErrorMessage(Inputs.IndexRegEmail, ref errMsgIndexRegEmail, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnRegistration, Inputs.IndexRegButton);
+            this._SetButtonEnableProperties(btnIndexRegistration, Inputs.IndexRegButton);
         }
 
 
@@ -428,7 +428,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
         private void _CheckRegistrationPhoneValidation()
         {
             string errorMessage = "";
-            string phone = tbRegPhone.Text.Trim();
+            string phone = tbIndexRegPhone.Text.Trim();
 
             if (phone.Length == 0)
             {
@@ -440,9 +440,9 @@ namespace HousingManagementSystemForAIUBStudents.Views
                 errorMessage += "Phone Number is not valid e.g +8801628769304\n";
             }
 
-            this._ShowErrorMessage(Inputs.IndexRegPhone, ref errMsgRegPhone, ref errorMessage);
+            this._ShowErrorMessage(Inputs.IndexRegPhone, ref errMsgIndexRegPhone, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnRegistration, Inputs.IndexRegButton);
+            this._SetButtonEnableProperties(btnIndexRegistration, Inputs.IndexRegButton);
         }
 
 
@@ -458,7 +458,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
         private void _CheckRegistrationPasswordValidation()
         {
             string errorMessage = "";
-            string password = tbRegPassword.Text.Trim();
+            string password = tbIndexRegPassword.Text.Trim();
 
             if (password.Length == 0)
             {
@@ -474,9 +474,9 @@ namespace HousingManagementSystemForAIUBStudents.Views
                 errorMessage += "Password must include at least one special characters (!, @, #, $, %)\n";
             }
 
-            this._ShowErrorMessage(Inputs.IndexRegPassword, ref errMsgRegPassword, ref errorMessage);
+            this._ShowErrorMessage(Inputs.IndexRegPassword, ref errMsgIndexRegPassword, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnRegistration, Inputs.IndexRegButton);
+            this._SetButtonEnableProperties(btnIndexRegistration, Inputs.IndexRegButton);
         }
 
 
@@ -494,8 +494,8 @@ namespace HousingManagementSystemForAIUBStudents.Views
         {
             
             string errorMessage = "";
-            string password = tbRegPassword.Text.Trim();
-            string confirmPassword = tbRegConfirmPassword.Text.Trim();
+            string password = tbIndexRegPassword.Text.Trim();
+            string confirmPassword = tbIndexRegConfirmPassword.Text.Trim();
 
             if (confirmPassword.Length == 0)
             {
@@ -507,9 +507,9 @@ namespace HousingManagementSystemForAIUBStudents.Views
                 errorMessage += "Confirm Password must match Password\n";
             }
 
-            this._ShowErrorMessage(Inputs.IndexRegConfirmPassword, ref errMsgRegConfirmPassword, ref errorMessage);
+            this._ShowErrorMessage(Inputs.IndexRegConfirmPassword, ref errMsgIndexRegConfirmPassword, ref errorMessage);
 
-            this._SetButtonEnableProperties(btnRegistration, Inputs.IndexRegButton);
+            this._SetButtonEnableProperties(btnIndexRegistration, Inputs.IndexRegButton);
         }
 
         private void tbRegName_KeyUp(object sender, KeyEventArgs e)
@@ -539,7 +539,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
         private void btnRegistration_Click(object sender, EventArgs e)
         {
-            if (!this._IsRegistrationNameValid() || !this._IsEmailValid(tbRegEmail) || !this._IsRegistrationPhoneValid() || !this._IsRegistrationPasswordValid() || !this._IsRegistrationConfirmPasswordValid())
+            if (!this._IsRegistrationNameValid() || !this._IsEmailValid(tbIndexRegEmail) || !this._IsRegistrationPhoneValid() || !this._IsRegistrationPasswordValid() || !this._IsRegistrationConfirmPasswordValid())
             {
                 this._CheckRegistrationNameValidation();
                 this._CheckRegistrationEmailValidation();

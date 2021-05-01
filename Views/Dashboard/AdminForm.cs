@@ -44,12 +44,12 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             {
                 case Inputs.AdminSearchUserEmail:
 
-                    btn.Enabled = (this._IsEmailValid(tbSearchUserEmail));
+                    btn.Enabled = (this._IsEmailValid(tbAdminSearchUserEmail));
 
                     break;
                 case Inputs.AdminDeleteUserEmail:
 
-                    btn.Enabled = (this._IsEmailValid(tbDeleteUserEmail));
+                    btn.Enabled = (this._IsEmailValid(tbAdminDeleteUserEmail));
 
                     break;
             }
@@ -69,7 +69,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             {
                 case Inputs.AdminSearchUserEmail:
 
-                    if (this._IsEmailValid(tbSearchUserEmail))
+                    if (this._IsEmailValid(tbAdminSearchUserEmail))
                     {
                         errorMessage = "";
                         errLable.Text = errorMessage;
@@ -82,7 +82,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                     break;
                 case Inputs.AdminDeleteUserEmail:
 
-                    if (this._IsEmailValid(tbDeleteUserEmail))
+                    if (this._IsEmailValid(tbAdminDeleteUserEmail))
                     {
                         errorMessage = "";
                         errLable.Text = errorMessage;
@@ -132,7 +132,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         private void _CheckSearchUserEmailValidation()
         {
             string errorMessage = "";
-            string email = tbSearchUserEmail.Text.Trim();
+            string email = tbAdminSearchUserEmail.Text.Trim();
 
             if (email.Length == 0)
             {
@@ -144,9 +144,9 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                 errorMessage += "Email is not valid\n";
             }
 
-            this._ShowErrorMessage(Inputs.AdminSearchUserEmail, ref errMsgSearchUserEmail, ref errorMessage);
+            this._ShowErrorMessage(Inputs.AdminSearchUserEmail, ref errMsgAdminSearchUserEmail, ref errorMessage);
 
-            this._SetLoginButtonEnableProperties(btnSearchUser, Inputs.AdminSearchUserEmail);
+            this._SetLoginButtonEnableProperties(btnAdminSearchUser, Inputs.AdminSearchUserEmail);
         }
 
 
@@ -157,7 +157,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 
         private void btnSearchUser_Click(object sender, EventArgs e)
         {
-            if (!this._IsEmailValid(tbSearchUserEmail))
+            if (!this._IsEmailValid(tbAdminSearchUserEmail))
             {
                 this._CheckSearchUserEmailValidation();
 
@@ -188,7 +188,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         private void _CheckDeleteUserEmailValidation()
         {
             string errorMessage = "";
-            string email = tbDeleteUserEmail.Text.Trim();
+            string email = tbAdminDeleteUserEmail.Text.Trim();
 
             if (email.Length == 0)
             {
@@ -200,9 +200,9 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
                 errorMessage += "Email is not valid\n";
             }
 
-            this._ShowErrorMessage(Inputs.AdminDeleteUserEmail, ref errMsgDeleteUserEmail, ref errorMessage);
+            this._ShowErrorMessage(Inputs.AdminDeleteUserEmail, ref errMsgAdminDeleteUserEmail, ref errorMessage);
 
-            this._SetLoginButtonEnableProperties(btnDeleteUser, Inputs.AdminDeleteUserEmail);
+            this._SetLoginButtonEnableProperties(btnAdminDeleteUser, Inputs.AdminDeleteUserEmail);
         }
 
         private void tbDeleteUserEmail_KeyUp(object sender, KeyEventArgs e)
@@ -213,7 +213,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
 
-            if (!this._IsEmailValid(tbDeleteUserEmail))
+            if (!this._IsEmailValid(tbAdminDeleteUserEmail))
             {
                 this._CheckDeleteUserEmailValidation();
 
@@ -224,5 +224,6 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         }
 
         #endregion
+
     }
 }
