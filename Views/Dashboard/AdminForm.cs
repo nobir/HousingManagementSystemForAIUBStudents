@@ -9,12 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
+using HousingManagementSystemForAIUBStudents.Models;
+
 namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 {
     public partial class AdminForm : Form
     {
-        public AdminForm()
+        private AdminForm()
         {
+            InitializeComponent();
+        }
+
+        private Admin admin = null;
+        public AdminForm(Admin admin)
+        {
+            this.admin = admin;
             InitializeComponent();
         }
 

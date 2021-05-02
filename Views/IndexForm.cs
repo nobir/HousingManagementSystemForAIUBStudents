@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
+using HousingManagementSystemForAIUBStudents.Models;
+
 namespace HousingManagementSystemForAIUBStudents.Views
 {
     public partial class IndexForm : Form
@@ -276,6 +278,70 @@ namespace HousingManagementSystemForAIUBStudents.Views
             }
 
             // Start Database Login process
+            string email = tbIndexLoginEmail.Text.Trim();
+            string password = tbIndexLoginPassword.Text.Trim();
+            string type = gbIndexLoginUserType.Controls.OfType<RadioButton>().FirstOrDefault(rb => rb.Checked).Text.Trim();
+
+            if (type.Equals("Student"))
+            {
+                Tenant tenant = Database.Instance.Tenants.AuthenticateUser(email, password);
+
+                if (tenant != null)
+                {
+                    this.Hide();
+                    new Views.Dashboard.TenantForm(tenant).Show();
+                }
+                else
+                {
+                    // Displays the MessageBox.
+                    MessageBox.Show(
+                        "Login Credential is not correct",
+                        "Error Login",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+            }
+            else if (type.Equals("Renter"))
+            {
+                Renter renter = Database.Instance.Renters.AuthenticateUser(email, password);
+
+                if (renter != null)
+                {
+                    this.Hide();
+                    new Views.Dashboard.RenterForm(renter).Show();
+                }
+                else
+                {
+                    // Displays the MessageBox.
+                    MessageBox.Show(
+                        "Login Credential is not correct",
+                        "Error Login",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+            }
+            else if (type.Equals("Admin"))
+            {
+                Admin admin = Database.Instance.Admins.AuthenticateUser(email, password);
+
+                if (admin != null)
+                {
+                    this.Hide();
+                    new Views.Dashboard.AdminForm(admin).Show();
+                }
+                else
+                {
+                    // Displays the MessageBox.
+                    MessageBox.Show(
+                        "Login Credential is not correct",
+                        "Error Login",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+            }
         }
 
         #endregion

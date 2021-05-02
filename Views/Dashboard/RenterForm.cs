@@ -9,12 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
+using HousingManagementSystemForAIUBStudents.Models;
+
 namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 {
     public partial class RenterForm : Form
     {
-        public RenterForm()
+        private RenterForm()
         {
+            InitializeComponent();
+        }
+
+        private Renter renter = null;
+        public RenterForm(Renter renter)
+        {
+            this.renter = renter;
             InitializeComponent();
         }
 
