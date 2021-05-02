@@ -29,7 +29,7 @@ namespace HousingManagementSystemForAIUBStudents.Controllers
             if (user != null)
             {
                 form.Hide();
-                new TenantForm(user);
+                new TenantForm(user).Show();
                 return user;
             }
             return null;

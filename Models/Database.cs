@@ -9,8 +9,8 @@ namespace HousingManagementSystemForAIUBStudents.Models
 {
     public sealed class Database
     {
-        //private static string serverName = @"NOBIR\SQLEXPRESS";
-        private static string serverName = @"DESKTOP-AHJQ59S\SQLEXPRESS";
+        private static string serverName = @"NOBIR\SQLEXPRESS";
+        //private static string serverName = @"DESKTOP-AHJQ59S\SQLEXPRESS";
         //private static string serverName = @"SHAHRAIRSOJIBPC\SQLEXPRESS";
         //private static string serverName = @"SAJJAD\SQLEXPRESS";
 
