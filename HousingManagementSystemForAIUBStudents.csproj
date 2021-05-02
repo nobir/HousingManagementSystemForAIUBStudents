@@ -48,6 +48,8 @@
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Admins.cs" />
     <Compile Include="Models\Database.cs" />
+    <Compile Include="Models\House.cs" />
+    <Compile Include="Models\Houses.cs" />
     <Compile Include="Models\Renter.cs" />
     <Compile Include="Models\Renters.cs" />
     <Compile Include="Models\Tenant.cs" />
