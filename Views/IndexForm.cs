@@ -343,7 +343,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
             user.Email = email;
             user.Password = password;
 
-            user = LoginController.AuthenticateUser(user, this);
+            user = IndexLoginController.AuthenticateUser(user, this);
 
             this._ResetIndexLoginInputs();
 
@@ -657,7 +657,7 @@ namespace HousingManagementSystemForAIUBStudents.Views
             user.Phone = phone;
             user.Password = password;
 
-            bool isCreated = RegistrationController.Registration(user);
+            bool isCreated = IndexRegistrationController.Registration(user);
 
             this._ResetIndexRegInputs();
 

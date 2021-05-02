@@ -9,7 +9,7 @@ using HousingManagementSystemForAIUBStudents.Models;
 
 namespace HousingManagementSystemForAIUBStudents.Controllers
 {
-    public class RegistrationController
+    public class IndexRegistrationController
     {
         public static bool Registration(Tenant tenant)
         {

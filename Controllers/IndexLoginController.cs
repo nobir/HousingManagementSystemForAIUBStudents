@@ -10,7 +10,7 @@ using HousingManagementSystemForAIUBStudents.Views.Dashboard;
 
 namespace HousingManagementSystemForAIUBStudents.Controllers
 {
-    public class LoginController
+    public class IndexLoginController
     {
         public static Admin AuthenticateUser(Admin admin, Form form)
         {
