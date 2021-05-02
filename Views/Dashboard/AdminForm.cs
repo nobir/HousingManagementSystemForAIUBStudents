@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
 using HousingManagementSystemForAIUBStudents.Models;
+using HousingManagementSystemForAIUBStudents.Controllers;
 
 namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 {
@@ -174,6 +175,29 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             }
 
             // Start Database Searching process
+
+            string email = tbAdminSearchUserEmail.Text.Trim();
+            string type = gbAdminSearchUserType.Controls.OfType<RadioButton>().FirstOrDefault(rb => rb.Checked).Text.Trim();
+
+            rtbAdminSearchUser.Text = "";
+            dynamic user = AdminController.SearchUser(email, type);
+
+            if (user != null)
+            {
+                rtbAdminSearchUser.Text = "";
+                rtbAdminSearchUser.Text = String.Format("Name: {0}\nEmail: {1}\nPhone: {2}", user.Name, user.Email, user.Phone);
+                tbAdminSearchUserEmail.Text = "";
+            }
+            else
+            {
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "User not found",
+                    "Error | User not found",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
         }
 
         #endregion
@@ -230,6 +254,45 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             }
 
             // Start Database Deleting process
+
+            DialogResult confirm = MessageBox.Show(
+                this,
+                "Are you sure you want to Delete the user?",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (confirm == DialogResult.Yes)
+            {
+                string email = tbAdminDeleteUserEmail.Text.Trim();
+                string type = gbAdminDeleteUserType.Controls.OfType<RadioButton>().FirstOrDefault(rb => rb.Checked).Text.Trim();
+
+                bool isUserDelete = AdminController.DeleteUser(email, type);
+
+                if (isUserDelete)
+                {
+                    // Displays the MessageBox.
+                    MessageBox.Show(
+                        "User Deleted Successfully",
+                        "Success | User Deleted",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+
+                    tbAdminDeleteUserEmail.Text = "";
+                }
+                else
+                {
+                    // Displays the MessageBox.
+                    MessageBox.Show(
+                        "User not found",
+                        "Error | User not found",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+            }
         }
 
         #endregion

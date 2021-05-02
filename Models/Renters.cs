@@ -89,5 +89,78 @@ namespace HousingManagementSystemForAIUBStudents.Models
 
             return false;
         }
+
+        public Renter GetUser(string email)
+        {
+            string query = "";
+            Renter renter = null;
+
+            Renters.connection.Open();
+
+            try
+            {
+                query = String.Format("SELECT * FROM renter WHERE email='{0}'", email);
+                SqlCommand cmd = new SqlCommand(query, Renters.connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    renter = new Renter();
+                    renter.Id = reader.GetInt32(reader.GetOrdinal("r_id"));
+                    renter.Name = reader.GetString(reader.GetOrdinal("name"));
+                    renter.Email = reader.GetString(reader.GetOrdinal("email"));
+                    renter.Phone = reader.GetString(reader.GetOrdinal("phone"));
+                    renter.Password = reader.GetString(reader.GetOrdinal("password"));
+                }
+            }
+            catch (Exception ex)
+            {
+                Renters.connection.Close();
+
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "Getting Renter Unsuccessfull!\n\n" + ex,
+                    "ERROR | Renter not Getting",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+
+            Renters.connection.Close();
+
+            return renter;
+        }
+
+        public bool DeleteUser(string email)
+        {
+            string query = "";
+            int r = 0;
+
+            Renters.connection.Open();
+
+            try
+            {
+                query = String.Format("DELETE FROM renter WHERE email='{0}'", email);
+                SqlCommand cmd = new SqlCommand(query, Renters.connection);
+                r = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Renters.connection.Close();
+
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "Student Delete Unsuccessfull!\n\n" + ex,
+                    "ERROR | Student not Deleted",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+
+            Renters.connection.Close();
+            if (r > 0) return true;
+
+            return false;
+        }
     }
 }

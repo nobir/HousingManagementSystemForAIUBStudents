@@ -57,5 +57,25 @@ namespace HousingManagementSystemForAIUBStudents.Models
             Admins.connection.Close();
             return admin;
         }
+
+        public Tenant GetTenant(string email)
+        {
+            return Database.Instance.Tenants.GetUser(email);
+        }
+
+        public Renter GetRenter(string email)
+        {
+            return Database.Instance.Renters.GetUser(email);
+        }
+
+        public bool DeleteTenant(string email)
+        {
+            return Database.Instance.Tenants.DeleteUser(email);
+        }
+
+        public bool DeleteRenter(string email)
+        {
+            return Database.Instance.Renters.DeleteUser(email);
+        }
     }
 }
