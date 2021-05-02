@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
 using HousingManagementSystemForAIUBStudents.Models;
+using HousingManagementSystemForAIUBStudents.Controllers;
+
 
 namespace HousingManagementSystemForAIUBStudents.Views
 {
@@ -282,65 +284,35 @@ namespace HousingManagementSystemForAIUBStudents.Views
             string password = tbIndexLoginPassword.Text.Trim();
             string type = gbIndexLoginUserType.Controls.OfType<RadioButton>().FirstOrDefault(rb => rb.Checked).Text.Trim();
 
+            dynamic user = null;
+
             if (type.Equals("Student"))
             {
-                Tenant tenant = Database.Instance.Tenants.AuthenticateUser(email, password);
-
-                if (tenant != null)
-                {
-                    this.Hide();
-                    new Views.Dashboard.TenantForm(tenant).Show();
-                }
-                else
-                {
-                    // Displays the MessageBox.
-                    MessageBox.Show(
-                        "Login Credential is not correct",
-                        "Error Login",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
-                    );
-                }
+                user = new Tenant();
             }
             else if (type.Equals("Renter"))
             {
-                Renter renter = Database.Instance.Renters.AuthenticateUser(email, password);
-
-                if (renter != null)
-                {
-                    this.Hide();
-                    new Views.Dashboard.RenterForm(renter).Show();
-                }
-                else
-                {
-                    // Displays the MessageBox.
-                    MessageBox.Show(
-                        "Login Credential is not correct",
-                        "Error Login",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
-                    );
-                }
+                user = new Renter();
             }
             else if (type.Equals("Admin"))
             {
-                Admin admin = Database.Instance.Admins.AuthenticateUser(email, password);
+                user = new Admin();
+            }
 
-                if (admin != null)
-                {
-                    this.Hide();
-                    new Views.Dashboard.AdminForm(admin).Show();
-                }
-                else
-                {
-                    // Displays the MessageBox.
-                    MessageBox.Show(
-                        "Login Credential is not correct",
-                        "Error Login",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
-                    );
-                }
+            user.Email = email;
+            user.Password = password;
+
+            user = LoginController.AuthenticateUser(user, this);
+
+            if (user == null)
+            {
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "Login Credential is not correct",
+                    "Error Login",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
             }
         }
 
