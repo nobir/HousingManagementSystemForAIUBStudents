@@ -33,6 +33,47 @@ namespace HousingManagementSystemForAIUBStudents.Views
 
 
         /**
+         * Reset all the inputs to blank
+         */
+
+        private void _ResetIndexLoginInputs()
+        {
+            tbIndexLoginEmail.Text = "";
+            errMsgIndexLoginEmail.Text = "";
+
+            tbIndexLoginPassword.Text = "";
+            errMsgIndexLoginPassword.Text = "";
+
+            btnIndexLogin.Enabled = false;
+        }
+
+
+        /**
+         * Reset all the inputs to blank
+         */
+
+        private void _ResetIndexRegInputs()
+        {
+            tbIndexRegName.Text = "";
+            errMsgIndexRegName.Text = "";
+
+            tbIndexRegEmail.Text = "";
+            errMsgIndexRegEmail.Text = "";
+
+            tbIndexRegPhone.Text = "";
+            errMsgIndexRegPhone.Text = "";
+
+            tbIndexRegPassword.Text = "";
+            errMsgIndexRegPassword.Text = "";
+
+            tbIndexRegConfirmPassword.Text = "";
+            errMsgIndexRegConfirmPassword.Text = "";
+
+            btnIndexRegistration.Enabled = false;
+        }
+
+
+        /**
          * Set the Enable properties of Login Button
          * depending on the validation
          * if the all the inputs are
@@ -303,6 +344,8 @@ namespace HousingManagementSystemForAIUBStudents.Views
             user.Password = password;
 
             user = LoginController.AuthenticateUser(user, this);
+
+            this._ResetIndexLoginInputs();
 
             if (user == null)
             {
@@ -591,10 +634,45 @@ namespace HousingManagementSystemForAIUBStudents.Views
             }
 
             // Start Database Registration process
+
+            string name = tbIndexRegName.Text.Trim();
+            string email = tbIndexRegEmail.Text.Trim();
+            string phone = tbIndexRegPhone.Text.Trim();
+            string password = tbIndexRegPassword.Text.Trim();
+            string type = gbIndexRegUserType.Controls.OfType<RadioButton>().FirstOrDefault(rb => rb.Checked).Text.Trim();
+
+            dynamic user = null;
+
+            if (type.Equals("Student"))
+            {
+                user = new Tenant();
+            }
+            else if (type.Equals("Renter"))
+            {
+                user = new Renter();
+            }
+
+            user.Name = name;
+            user.Email = email;
+            user.Phone = phone;
+            user.Password = password;
+
+            bool isCreated = RegistrationController.Registration(user);
+
+            this._ResetIndexRegInputs();
+
+            if (isCreated)
+            {
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "Added Successfull!",
+                    "Registration",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
         }
 
         #endregion
-
-
     }
 }

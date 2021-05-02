@@ -58,5 +58,36 @@ namespace HousingManagementSystemForAIUBStudents.Models
             Renters.connection.Close();
             return renter;
         }
+        public bool Create(Renter renter)
+        {
+            string query = "";
+            int result = 0;
+
+            Renters.connection.Open();
+
+            try
+            {
+                query = String.Format("INSERT INTO renter VALUES ('{0}','{1}','{2}', '{3}')", renter.Name, renter.Email, renter.Phone, renter.Password);
+                SqlCommand cmd = new SqlCommand(query, Renters.connection);
+                result = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Renters.connection.Close();
+
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "Renter Added Unsuccessfull!\n\n" + ex,
+                    "ERROR | Renter not added",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+
+            Renters.connection.Close();
+            if (result > 0) return true;
+
+            return false;
+        }
     }
 }

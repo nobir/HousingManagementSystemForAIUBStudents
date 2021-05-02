@@ -58,5 +58,37 @@ namespace HousingManagementSystemForAIUBStudents.Models
             Tenants.connection.Close();
             return tenant;
         }
+
+        public bool Create(Tenant tenant)
+        {
+            string query = "";
+            int result = 0;
+
+            Tenants.connection.Open();
+
+            try
+            {
+                query = String.Format("INSERT INTO tenant VALUES ('{0}','{1}','{2}', '{3}')", tenant.Name, tenant.Email, tenant.Phone, tenant.Password);
+                SqlCommand cmd = new SqlCommand(query, Tenants.connection);
+                result = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Tenants.connection.Close();
+
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "Student Added Unsuccessfull!\n\n" + ex,
+                    "ERROR | Student not added",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+
+            Tenants.connection.Close();
+            if (result > 0) return true;
+
+            return false;
+        }
     }
 }

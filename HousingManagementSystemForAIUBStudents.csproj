@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Controllers\Controllers.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Admins.cs" />
     <Compile Include="Models\Database.cs" />
