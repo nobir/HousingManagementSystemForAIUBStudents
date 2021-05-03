@@ -10,8 +10,9 @@ using HousingManagementSystemForAIUBStudents.Views.Dashboard;
 
 namespace HousingManagementSystemForAIUBStudents.Controllers
 {
-    public class IndexLoginController
+    class IndexController
     {
+        // LoginTab
         public static Admin AuthenticateUser(Admin admin, Form form)
         {
             Admin user = Database.Instance.Admins.AuthenticateUser(admin.Email, admin.Password);
@@ -44,6 +45,17 @@ namespace HousingManagementSystemForAIUBStudents.Controllers
                 return user;
             }
             return null;
+        }
+
+        // RegistrationTab
+        public static bool Registration(Tenant tenant)
+        {
+            return Database.Instance.Tenants.Create(tenant);
+        }
+
+        public static bool Registration(Renter renter)
+        {
+            return Database.Instance.Renters.Create(renter);
         }
     }
 }

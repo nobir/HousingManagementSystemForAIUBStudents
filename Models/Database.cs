@@ -11,8 +11,8 @@ namespace HousingManagementSystemForAIUBStudents.Models
     {
         //private static string serverName = @"NOBIR\SQLEXPRESS";
         //private static string serverName = @"DESKTOP-AHJQ59S\SQLEXPRESS";
-        private static string serverName = @"SHAHRAIRSOJIBPC\SQLEXPRESS";
-        //private static string serverName = @"SAJJAD\SQLEXPRESS";
+        //private static string serverName = @"SHAHRAIRSOJIBPC\SQLEXPRESS";
+        private static string serverName = @"SAJJAD\SQLEXPRESS";
 
         private static string databaseName = @"hmsaiubs";
         private static string connectionString = String.Format(@"Server={0};Database={1};Integrated Security=true;", serverName, databaseName);
