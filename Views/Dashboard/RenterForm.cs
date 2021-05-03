@@ -29,6 +29,27 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             InitializeComponent();
         }
 
+        /**
+         * Reset all the inputs to blank
+         */
+
+        private void _ResetRenterAddHouseInputs()
+        {
+            tbRenterAddHouseName.Text = "";
+            errMsgRenterAddHouseName.Text = "";
+
+            tbRenterAddHouseNumber.Text = "";
+            errMsgRenterAddHouseNumber.Text = "";
+
+            tbRenterAddHouseSector.Text = "";
+            errMsgRenterAddHouseSector.Text = "";
+
+            tbRenterAddHousePrize.Text = "";
+            errMsgRenterAddHousePrize.Text = "";
+
+            btnRenterAddHouse.Enabled = false;
+        }
+
         override protected void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
@@ -777,6 +798,33 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             }
 
             // Start Database Addding process
+
+            string houseName = tbRenterAddHouseName.Text.Trim();
+            string houseNumber = tbRenterAddHouseNumber.Text.Trim();
+            string houseSector = tbRenterAddHouseSector.Text.Trim();
+            string housePrice = tbRenterAddHousePrize.Text.Trim();
+
+            House house = new House();
+
+            house.Name = houseName;
+            house.Number = Int32.Parse(houseNumber);
+            house.Sector = Int32.Parse(houseSector);
+            house.Price = housePrice;
+
+            bool isCreated = RenterController.AddHouse(house, ""+this.renter.Id);
+
+            this._ResetRenterAddHouseInputs();
+
+            if (isCreated)
+            {
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "Added Successfull!",
+                    "Add House",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
         }
 
         #endregion

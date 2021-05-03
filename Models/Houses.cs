@@ -104,5 +104,37 @@ namespace HousingManagementSystemForAIUBStudents.Models
             Houses.connection.Close();
             return house;
         }
+
+        public bool AddHouse(House house, string renterId)
+        {
+            string query = "";
+            int result = 0;
+
+            Houses.connection.Open();
+
+            try
+            {
+                query = String.Format("INSERT INTO house VALUES ('{0}','{1}','{2}', '{3}', '0', '{4}', NULL)", house.Name, house.Number, house.Sector, house.Price, renterId);
+                SqlCommand cmd = new SqlCommand(query, Houses.connection);
+                result = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Houses.connection.Close();
+
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "House Added Unsuccessfull!\n\n" + ex,
+                    "ERROR | House not added",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+
+            Houses.connection.Close();
+            if (result > 0) return true;
+
+            return false;
+        }
     }
 }
