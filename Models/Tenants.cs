@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace HousingManagementSystemForAIUBStudents.Models
 {
@@ -195,6 +196,83 @@ namespace HousingManagementSystemForAIUBStudents.Models
             if (r > 0) return true;
 
             return false;
+        }
+
+        public bool RentHouse(string houseId, int tenantId)
+        {
+            string query = "";
+            int r = 0;
+
+            Tenants.connection.Open();
+
+            try
+            {
+                query = String.Format("UPDATE house SET status='0', t_id='{1}' WHERE h_id='{0}'", houseId, tenantId);
+                SqlCommand cmd = new SqlCommand(query, Tenants.connection);
+                r = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Tenants.connection.Close();
+
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "House Rent Unsuccessfull!\n\n" + ex,
+                    "ERROR | House not Rent",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+
+            Tenants.connection.Close();
+
+            if (r > 0) return true;
+            return false;
+        }
+
+        public ArrayList GetAllRentHouse(int tenantId)
+        {
+            string query = "";
+            ArrayList renthouses = new ArrayList();
+
+            Tenants.connection.Open();
+
+            try
+            {
+                query = String.Format("SELECT * FROM house WHERE t_id={0}", tenantId);
+                SqlCommand cmd = new SqlCommand(query, Tenants.connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    House house = new House();
+
+                    house.Id = reader.GetInt32(reader.GetOrdinal("h_id"));
+                    house.Name = reader.GetString(reader.GetOrdinal("name"));
+                    house.Number = reader.GetInt32(reader.GetOrdinal("number"));
+                    house.Sector = reader.GetInt32(reader.GetOrdinal("sector"));
+                    house.Price = reader.GetString(reader.GetOrdinal("price"));
+                    house.Status = reader.GetInt32(reader.GetOrdinal("status"));
+
+                    renthouses.Add(house);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Tenants.connection.Close();
+
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "There is and error to getting house!\n\n" + ex,
+                    "Error | Getting House information",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+
+            Tenants.connection.Close();
+            return renthouses;
         }
     }
 }

@@ -42,23 +42,24 @@
             this.tbTenantEditEmail = new System.Windows.Forms.TextBox();
             this.lbTenantEditEmail = new System.Windows.Forms.Label();
             this.tabTenantViewHouse = new System.Windows.Forms.TabPage();
-            this.actionMsgTenantViewHouse = new System.Windows.Forms.Label();
+            this.btnTenantViewHouseShowAll = new System.Windows.Forms.Button();
             this.errMsgTenantViewHouseId = new System.Windows.Forms.Label();
             this.tbTenantViewHouseId = new System.Windows.Forms.TextBox();
             this.lbTenantViewHouseId = new System.Windows.Forms.Label();
             this.btnTenantViewHouse = new System.Windows.Forms.Button();
             this.dgvTenantViewHouse = new System.Windows.Forms.DataGridView();
             this.tabTenantRentHouse = new System.Windows.Forms.TabPage();
-            this.actionMsgTenantRentHouse = new System.Windows.Forms.Label();
             this.errMsgTenantRentHouseId = new System.Windows.Forms.Label();
             this.tbTenantRentHouseId = new System.Windows.Forms.TextBox();
             this.lbTenantRentHouseId = new System.Windows.Forms.Label();
             this.btnTenantRentHouse = new System.Windows.Forms.Button();
+            this.dgvTenantRentHouse = new System.Windows.Forms.DataGridView();
             this.tabControlTenant.SuspendLayout();
             this.tabTenantEditProfile.SuspendLayout();
             this.tabTenantViewHouse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTenantViewHouse)).BeginInit();
             this.tabTenantRentHouse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTenantRentHouse)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlTenant
@@ -189,7 +190,7 @@
             // 
             // tabTenantViewHouse
             // 
-            this.tabTenantViewHouse.Controls.Add(this.actionMsgTenantViewHouse);
+            this.tabTenantViewHouse.Controls.Add(this.btnTenantViewHouseShowAll);
             this.tabTenantViewHouse.Controls.Add(this.errMsgTenantViewHouseId);
             this.tabTenantViewHouse.Controls.Add(this.tbTenantViewHouseId);
             this.tabTenantViewHouse.Controls.Add(this.lbTenantViewHouseId);
@@ -198,22 +199,20 @@
             this.tabTenantViewHouse.Location = new System.Drawing.Point(4, 26);
             this.tabTenantViewHouse.Name = "tabTenantViewHouse";
             this.tabTenantViewHouse.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTenantViewHouse.Size = new System.Drawing.Size(766, 515);
+            this.tabTenantViewHouse.Size = new System.Drawing.Size(768, 523);
             this.tabTenantViewHouse.TabIndex = 1;
             this.tabTenantViewHouse.Text = "View House";
             this.tabTenantViewHouse.UseVisualStyleBackColor = true;
             // 
-            // actionMsgTenantViewHouse
+            // btnTenantViewHouseShowAll
             // 
-            this.actionMsgTenantViewHouse.AutoSize = true;
-            this.actionMsgTenantViewHouse.Font = new System.Drawing.Font("Calibri", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actionMsgTenantViewHouse.ForeColor = System.Drawing.Color.Red;
-            this.actionMsgTenantViewHouse.Location = new System.Drawing.Point(225, 137);
-            this.actionMsgTenantViewHouse.Name = "actionMsgTenantViewHouse";
-            this.actionMsgTenantViewHouse.Size = new System.Drawing.Size(162, 23);
-            this.actionMsgTenantViewHouse.TabIndex = 34;
-            this.actionMsgTenantViewHouse.Text = "House Not Found!!!";
-            this.actionMsgTenantViewHouse.Visible = false;
+            this.btnTenantViewHouseShowAll.Location = new System.Drawing.Point(554, 76);
+            this.btnTenantViewHouseShowAll.Name = "btnTenantViewHouseShowAll";
+            this.btnTenantViewHouseShowAll.Size = new System.Drawing.Size(150, 35);
+            this.btnTenantViewHouseShowAll.TabIndex = 34;
+            this.btnTenantViewHouseShowAll.Text = "Show All";
+            this.btnTenantViewHouseShowAll.UseVisualStyleBackColor = true;
+            this.btnTenantViewHouseShowAll.Click += new System.EventHandler(this.btnTenantViewHouseShowAll_Click);
             // 
             // errMsgTenantViewHouseId
             // 
@@ -257,37 +256,25 @@
             // 
             this.dgvTenantViewHouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTenantViewHouse.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvTenantViewHouse.Location = new System.Drawing.Point(3, 246);
+            this.dgvTenantViewHouse.Location = new System.Drawing.Point(3, 128);
             this.dgvTenantViewHouse.Name = "dgvTenantViewHouse";
             this.dgvTenantViewHouse.RowTemplate.Height = 24;
-            this.dgvTenantViewHouse.Size = new System.Drawing.Size(760, 266);
+            this.dgvTenantViewHouse.Size = new System.Drawing.Size(762, 392);
             this.dgvTenantViewHouse.TabIndex = 0;
             // 
             // tabTenantRentHouse
             // 
-            this.tabTenantRentHouse.Controls.Add(this.actionMsgTenantRentHouse);
+            this.tabTenantRentHouse.Controls.Add(this.dgvTenantRentHouse);
             this.tabTenantRentHouse.Controls.Add(this.errMsgTenantRentHouseId);
             this.tabTenantRentHouse.Controls.Add(this.tbTenantRentHouseId);
             this.tabTenantRentHouse.Controls.Add(this.lbTenantRentHouseId);
             this.tabTenantRentHouse.Controls.Add(this.btnTenantRentHouse);
             this.tabTenantRentHouse.Location = new System.Drawing.Point(4, 26);
             this.tabTenantRentHouse.Name = "tabTenantRentHouse";
-            this.tabTenantRentHouse.Size = new System.Drawing.Size(766, 515);
+            this.tabTenantRentHouse.Size = new System.Drawing.Size(768, 523);
             this.tabTenantRentHouse.TabIndex = 3;
             this.tabTenantRentHouse.Text = "Rent House";
             this.tabTenantRentHouse.UseVisualStyleBackColor = true;
-            // 
-            // actionMsgTenantRentHouse
-            // 
-            this.actionMsgTenantRentHouse.AutoSize = true;
-            this.actionMsgTenantRentHouse.Font = new System.Drawing.Font("Calibri", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actionMsgTenantRentHouse.ForeColor = System.Drawing.Color.Red;
-            this.actionMsgTenantRentHouse.Location = new System.Drawing.Point(225, 137);
-            this.actionMsgTenantRentHouse.Name = "actionMsgTenantRentHouse";
-            this.actionMsgTenantRentHouse.Size = new System.Drawing.Size(162, 23);
-            this.actionMsgTenantRentHouse.TabIndex = 29;
-            this.actionMsgTenantRentHouse.Text = "House Not Found!!!";
-            this.actionMsgTenantRentHouse.Visible = false;
             // 
             // errMsgTenantRentHouseId
             // 
@@ -327,6 +314,16 @@
             this.btnTenantRentHouse.UseVisualStyleBackColor = true;
             this.btnTenantRentHouse.Click += new System.EventHandler(this.btnRentHouse_Click);
             // 
+            // dgvTenantRentHouse
+            // 
+            this.dgvTenantRentHouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTenantRentHouse.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvTenantRentHouse.Location = new System.Drawing.Point(0, 131);
+            this.dgvTenantRentHouse.Name = "dgvTenantRentHouse";
+            this.dgvTenantRentHouse.RowTemplate.Height = 24;
+            this.dgvTenantRentHouse.Size = new System.Drawing.Size(768, 392);
+            this.dgvTenantRentHouse.TabIndex = 29;
+            // 
             // TenantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -354,6 +351,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTenantViewHouse)).EndInit();
             this.tabTenantRentHouse.ResumeLayout(false);
             this.tabTenantRentHouse.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTenantRentHouse)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,18 +371,18 @@
         private System.Windows.Forms.TextBox tbTenantEditEmail;
         private System.Windows.Forms.Label lbTenantEditEmail;
         private System.Windows.Forms.TabPage tabTenantViewHouse;
-        private System.Windows.Forms.Label actionMsgTenantViewHouse;
         private System.Windows.Forms.Label errMsgTenantViewHouseId;
         private System.Windows.Forms.TextBox tbTenantViewHouseId;
         private System.Windows.Forms.Label lbTenantViewHouseId;
         private System.Windows.Forms.Button btnTenantViewHouse;
         private System.Windows.Forms.DataGridView dgvTenantViewHouse;
         private System.Windows.Forms.TabPage tabTenantRentHouse;
-        private System.Windows.Forms.Label actionMsgTenantRentHouse;
         private System.Windows.Forms.Label errMsgTenantRentHouseId;
         private System.Windows.Forms.TextBox tbTenantRentHouseId;
         private System.Windows.Forms.Label lbTenantRentHouseId;
         private System.Windows.Forms.Button btnTenantRentHouse;
+        private System.Windows.Forms.Button btnTenantViewHouseShowAll;
+        private System.Windows.Forms.DataGridView dgvTenantRentHouse;
 
     }
 }

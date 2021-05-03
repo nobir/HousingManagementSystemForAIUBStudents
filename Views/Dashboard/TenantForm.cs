@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Collections;
 
 using HousingManagementSystemForAIUBStudents.Models;
 using HousingManagementSystemForAIUBStudents.Controllers;
@@ -402,11 +403,6 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             }
         }
 
-        private void TenantForm_Load(object sender, EventArgs e)
-        {
-            this._LoadTenantEditInfromation();
-        }
-
         #endregion
 
 
@@ -446,6 +442,11 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             this._SetButtonEnableProperties(btnTenantViewHouse, Inputs.TenantSearchButton);
         }
 
+        private void _LoadTenantViewHouseInformation()
+        {
+            dgvTenantViewHouse.DataSource = TenantController.GetAllHouse();
+        }
+
         private void tbViewHouseId_KeyUp(object sender, KeyEventArgs e)
         {
             this._CheckTenantViewHouseIdValidation();
@@ -453,14 +454,42 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 
         private void btnViewHouse_Click(object sender, EventArgs e)
         {
-            if (this._IsHouseIdValid(tbTenantViewHouseId))
+            if (!this._IsHouseIdValid(tbTenantViewHouseId))
             {
                 this._CheckTenantViewHouseIdValidation();
 
                 return;
             }
 
-            // Start Database Searching process
+            string houseId = tbTenantViewHouseId.Text.Trim();
+
+            House house = TenantController.GetHouse(houseId);
+
+            if (house != null)
+            {
+                ArrayList houses = new ArrayList();
+                houses.Add(house);
+                dgvTenantViewHouse.DataSource = houses;
+                tbTenantViewHouseId.Text = "";
+            }
+            else
+            {
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "House not found",
+                    "Error | House not found",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                this._LoadTenantViewHouseInformation();
+            }
+        }
+
+
+        private void btnTenantViewHouseShowAll_Click(object sender, EventArgs e)
+        {
+            this._LoadTenantViewHouseInformation();
         }
 
         #endregion
@@ -502,6 +531,11 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             this._SetButtonEnableProperties(btnTenantRentHouse, Inputs.TenantRentButton);
         }
 
+        private void _LoadTenantRentHouseInformation()
+        {
+            dgvTenantRentHouse.DataSource = TenantController.GetAllRentHouse(this.tenant.Id);
+        }
+
         private void tbRentHouseId_KeyUp(object sender, KeyEventArgs e)
         {
             this._CheckTenantRentHouseIdValidation();
@@ -509,7 +543,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 
         private void btnRentHouse_Click(object sender, EventArgs e)
         {
-            if (this._IsHouseIdValid(tbTenantRentHouseId))
+            if (!this._IsHouseIdValid(tbTenantRentHouseId))
             {
                 this._CheckTenantRentHouseIdValidation();
 
@@ -517,8 +551,43 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             }
 
             // Start Database Renting process
+
+            string houseId = tbTenantRentHouseId.Text.Trim();
+            bool isRented = TenantController.RentHouse(houseId, this.tenant.Id);
+
+            if (isRented)
+            {
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "House Rent Successfully",
+                    "Success | House Rent",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                tbTenantRentHouseId.Text = "";
+                btnTenantRentHouse.Enabled = false;
+                this._LoadTenantRentHouseInformation();
+            }
+            else
+            {
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "House Rent Unuccessfully",
+                    "Error | House not Rent",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
         }
 
         #endregion
+
+        private void TenantForm_Load(object sender, EventArgs e)
+        {
+            this._LoadTenantEditInfromation();
+            this._LoadTenantViewHouseInformation();
+            this._LoadTenantRentHouseInformation();
+        }
     }
 }

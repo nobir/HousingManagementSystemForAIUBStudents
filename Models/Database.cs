@@ -33,11 +33,13 @@ namespace HousingManagementSystemForAIUBStudents.Models
             this.Admins = new Admins();
             this.Tenants = new Tenants();
             this.Renters = new Renters();
+            this.Houses = new Houses();
         }
 
         public Admins Admins { get; set; }
         public Tenants Tenants { get; set; }
         public Renters Renters { get; set; }
+        public Houses Houses { get; set; }
         public static SqlConnection GetConnection()
         {
             SqlConnection connection = new SqlConnection(connectionString);
