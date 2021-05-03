@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TenantForm));
             this.tabControlTenant = new System.Windows.Forms.TabControl();
             this.tabTenantEditProfile = new System.Windows.Forms.TabPage();
             this.btnTenantEditProfile = new System.Windows.Forms.Button();
@@ -69,7 +70,7 @@
             this.tabControlTenant.Location = new System.Drawing.Point(4, 4);
             this.tabControlTenant.Name = "tabControlTenant";
             this.tabControlTenant.SelectedIndex = 0;
-            this.tabControlTenant.Size = new System.Drawing.Size(774, 545);
+            this.tabControlTenant.Size = new System.Drawing.Size(776, 553);
             this.tabControlTenant.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlTenant.TabIndex = 1;
             this.tabControlTenant.TabStop = false;
@@ -86,10 +87,10 @@
             this.tabTenantEditProfile.Controls.Add(this.errMsgTenantEditEmail);
             this.tabTenantEditProfile.Controls.Add(this.tbTenantEditEmail);
             this.tabTenantEditProfile.Controls.Add(this.lbTenantEditEmail);
-            this.tabTenantEditProfile.Location = new System.Drawing.Point(4, 30);
+            this.tabTenantEditProfile.Location = new System.Drawing.Point(4, 26);
             this.tabTenantEditProfile.Name = "tabTenantEditProfile";
             this.tabTenantEditProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTenantEditProfile.Size = new System.Drawing.Size(766, 511);
+            this.tabTenantEditProfile.Size = new System.Drawing.Size(768, 523);
             this.tabTenantEditProfile.TabIndex = 0;
             this.tabTenantEditProfile.Text = "Edit Profile";
             this.tabTenantEditProfile.UseVisualStyleBackColor = true;
@@ -112,14 +113,14 @@
             this.errMsgTenantEditPhone.ForeColor = System.Drawing.Color.Red;
             this.errMsgTenantEditPhone.Location = new System.Drawing.Point(210, 196);
             this.errMsgTenantEditPhone.Name = "errMsgTenantEditPhone";
-            this.errMsgTenantEditPhone.Size = new System.Drawing.Size(0, 19);
+            this.errMsgTenantEditPhone.Size = new System.Drawing.Size(0, 15);
             this.errMsgTenantEditPhone.TabIndex = 44;
             // 
             // tbTenantEditPhone
             // 
             this.tbTenantEditPhone.Location = new System.Drawing.Point(214, 165);
             this.tbTenantEditPhone.Name = "tbTenantEditPhone";
-            this.tbTenantEditPhone.Size = new System.Drawing.Size(293, 28);
+            this.tbTenantEditPhone.Size = new System.Drawing.Size(293, 24);
             this.tbTenantEditPhone.TabIndex = 3;
             this.tbTenantEditPhone.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbEditPhone_KeyUp);
             // 
@@ -128,7 +129,7 @@
             this.lbTenantEditPhone.AutoSize = true;
             this.lbTenantEditPhone.Location = new System.Drawing.Point(36, 172);
             this.lbTenantEditPhone.Name = "lbTenantEditPhone";
-            this.lbTenantEditPhone.Size = new System.Drawing.Size(54, 21);
+            this.lbTenantEditPhone.Size = new System.Drawing.Size(43, 17);
             this.lbTenantEditPhone.TabIndex = 43;
             this.lbTenantEditPhone.Text = "Phone";
             // 
@@ -139,14 +140,14 @@
             this.errMsgTenantEditName.ForeColor = System.Drawing.Color.Red;
             this.errMsgTenantEditName.Location = new System.Drawing.Point(210, 56);
             this.errMsgTenantEditName.Name = "errMsgTenantEditName";
-            this.errMsgTenantEditName.Size = new System.Drawing.Size(0, 19);
+            this.errMsgTenantEditName.Size = new System.Drawing.Size(0, 15);
             this.errMsgTenantEditName.TabIndex = 40;
             // 
             // tbTenantEditName
             // 
             this.tbTenantEditName.Location = new System.Drawing.Point(214, 25);
             this.tbTenantEditName.Name = "tbTenantEditName";
-            this.tbTenantEditName.Size = new System.Drawing.Size(293, 28);
+            this.tbTenantEditName.Size = new System.Drawing.Size(293, 24);
             this.tbTenantEditName.TabIndex = 1;
             this.tbTenantEditName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbEditName_KeyUp);
             // 
@@ -155,7 +156,7 @@
             this.lbTenantEditName.AutoSize = true;
             this.lbTenantEditName.Location = new System.Drawing.Point(36, 32);
             this.lbTenantEditName.Name = "lbTenantEditName";
-            this.lbTenantEditName.Size = new System.Drawing.Size(51, 21);
+            this.lbTenantEditName.Size = new System.Drawing.Size(42, 17);
             this.lbTenantEditName.TabIndex = 39;
             this.lbTenantEditName.Text = "Name";
             // 
@@ -166,14 +167,14 @@
             this.errMsgTenantEditEmail.ForeColor = System.Drawing.Color.Red;
             this.errMsgTenantEditEmail.Location = new System.Drawing.Point(210, 126);
             this.errMsgTenantEditEmail.Name = "errMsgTenantEditEmail";
-            this.errMsgTenantEditEmail.Size = new System.Drawing.Size(0, 19);
+            this.errMsgTenantEditEmail.Size = new System.Drawing.Size(0, 15);
             this.errMsgTenantEditEmail.TabIndex = 36;
             // 
             // tbTenantEditEmail
             // 
             this.tbTenantEditEmail.Location = new System.Drawing.Point(214, 95);
             this.tbTenantEditEmail.Name = "tbTenantEditEmail";
-            this.tbTenantEditEmail.Size = new System.Drawing.Size(293, 28);
+            this.tbTenantEditEmail.Size = new System.Drawing.Size(293, 24);
             this.tbTenantEditEmail.TabIndex = 2;
             this.tbTenantEditEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbEditEmail_KeyUp);
             // 
@@ -182,7 +183,7 @@
             this.lbTenantEditEmail.AutoSize = true;
             this.lbTenantEditEmail.Location = new System.Drawing.Point(36, 102);
             this.lbTenantEditEmail.Name = "lbTenantEditEmail";
-            this.lbTenantEditEmail.Size = new System.Drawing.Size(48, 21);
+            this.lbTenantEditEmail.Size = new System.Drawing.Size(39, 17);
             this.lbTenantEditEmail.TabIndex = 33;
             this.lbTenantEditEmail.Text = "Email";
             // 
@@ -194,10 +195,10 @@
             this.tabTenantViewHouse.Controls.Add(this.lbTenantViewHouseId);
             this.tabTenantViewHouse.Controls.Add(this.btnTenantViewHouse);
             this.tabTenantViewHouse.Controls.Add(this.dgvTenantViewHouse);
-            this.tabTenantViewHouse.Location = new System.Drawing.Point(4, 30);
+            this.tabTenantViewHouse.Location = new System.Drawing.Point(4, 26);
             this.tabTenantViewHouse.Name = "tabTenantViewHouse";
             this.tabTenantViewHouse.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTenantViewHouse.Size = new System.Drawing.Size(766, 511);
+            this.tabTenantViewHouse.Size = new System.Drawing.Size(766, 515);
             this.tabTenantViewHouse.TabIndex = 1;
             this.tabTenantViewHouse.Text = "View House";
             this.tabTenantViewHouse.UseVisualStyleBackColor = true;
@@ -209,7 +210,7 @@
             this.actionMsgTenantViewHouse.ForeColor = System.Drawing.Color.Red;
             this.actionMsgTenantViewHouse.Location = new System.Drawing.Point(225, 137);
             this.actionMsgTenantViewHouse.Name = "actionMsgTenantViewHouse";
-            this.actionMsgTenantViewHouse.Size = new System.Drawing.Size(209, 29);
+            this.actionMsgTenantViewHouse.Size = new System.Drawing.Size(162, 23);
             this.actionMsgTenantViewHouse.TabIndex = 34;
             this.actionMsgTenantViewHouse.Text = "House Not Found!!!";
             this.actionMsgTenantViewHouse.Visible = false;
@@ -221,14 +222,14 @@
             this.errMsgTenantViewHouseId.ForeColor = System.Drawing.Color.Red;
             this.errMsgTenantViewHouseId.Location = new System.Drawing.Point(165, 62);
             this.errMsgTenantViewHouseId.Name = "errMsgTenantViewHouseId";
-            this.errMsgTenantViewHouseId.Size = new System.Drawing.Size(0, 19);
+            this.errMsgTenantViewHouseId.Size = new System.Drawing.Size(0, 15);
             this.errMsgTenantViewHouseId.TabIndex = 33;
             // 
             // tbTenantViewHouseId
             // 
             this.tbTenantViewHouseId.Location = new System.Drawing.Point(169, 31);
             this.tbTenantViewHouseId.Name = "tbTenantViewHouseId";
-            this.tbTenantViewHouseId.Size = new System.Drawing.Size(293, 28);
+            this.tbTenantViewHouseId.Size = new System.Drawing.Size(293, 24);
             this.tbTenantViewHouseId.TabIndex = 30;
             this.tbTenantViewHouseId.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbViewHouseId_KeyUp);
             // 
@@ -237,7 +238,7 @@
             this.lbTenantViewHouseId.AutoSize = true;
             this.lbTenantViewHouseId.Location = new System.Drawing.Point(38, 38);
             this.lbTenantViewHouseId.Name = "lbTenantViewHouseId";
-            this.lbTenantViewHouseId.Size = new System.Drawing.Size(72, 21);
+            this.lbTenantViewHouseId.Size = new System.Drawing.Size(59, 17);
             this.lbTenantViewHouseId.TabIndex = 32;
             this.lbTenantViewHouseId.Text = "House ID";
             // 
@@ -256,7 +257,7 @@
             // 
             this.dgvTenantViewHouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTenantViewHouse.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvTenantViewHouse.Location = new System.Drawing.Point(3, 242);
+            this.dgvTenantViewHouse.Location = new System.Drawing.Point(3, 246);
             this.dgvTenantViewHouse.Name = "dgvTenantViewHouse";
             this.dgvTenantViewHouse.RowTemplate.Height = 24;
             this.dgvTenantViewHouse.Size = new System.Drawing.Size(760, 266);
@@ -269,9 +270,9 @@
             this.tabTenantRentHouse.Controls.Add(this.tbTenantRentHouseId);
             this.tabTenantRentHouse.Controls.Add(this.lbTenantRentHouseId);
             this.tabTenantRentHouse.Controls.Add(this.btnTenantRentHouse);
-            this.tabTenantRentHouse.Location = new System.Drawing.Point(4, 30);
+            this.tabTenantRentHouse.Location = new System.Drawing.Point(4, 26);
             this.tabTenantRentHouse.Name = "tabTenantRentHouse";
-            this.tabTenantRentHouse.Size = new System.Drawing.Size(766, 511);
+            this.tabTenantRentHouse.Size = new System.Drawing.Size(766, 515);
             this.tabTenantRentHouse.TabIndex = 3;
             this.tabTenantRentHouse.Text = "Rent House";
             this.tabTenantRentHouse.UseVisualStyleBackColor = true;
@@ -283,7 +284,7 @@
             this.actionMsgTenantRentHouse.ForeColor = System.Drawing.Color.Red;
             this.actionMsgTenantRentHouse.Location = new System.Drawing.Point(225, 137);
             this.actionMsgTenantRentHouse.Name = "actionMsgTenantRentHouse";
-            this.actionMsgTenantRentHouse.Size = new System.Drawing.Size(209, 29);
+            this.actionMsgTenantRentHouse.Size = new System.Drawing.Size(162, 23);
             this.actionMsgTenantRentHouse.TabIndex = 29;
             this.actionMsgTenantRentHouse.Text = "House Not Found!!!";
             this.actionMsgTenantRentHouse.Visible = false;
@@ -295,14 +296,14 @@
             this.errMsgTenantRentHouseId.ForeColor = System.Drawing.Color.Red;
             this.errMsgTenantRentHouseId.Location = new System.Drawing.Point(165, 62);
             this.errMsgTenantRentHouseId.Name = "errMsgTenantRentHouseId";
-            this.errMsgTenantRentHouseId.Size = new System.Drawing.Size(0, 19);
+            this.errMsgTenantRentHouseId.Size = new System.Drawing.Size(0, 15);
             this.errMsgTenantRentHouseId.TabIndex = 28;
             // 
             // tbTenantRentHouseId
             // 
             this.tbTenantRentHouseId.Location = new System.Drawing.Point(169, 31);
             this.tbTenantRentHouseId.Name = "tbTenantRentHouseId";
-            this.tbTenantRentHouseId.Size = new System.Drawing.Size(293, 28);
+            this.tbTenantRentHouseId.Size = new System.Drawing.Size(293, 24);
             this.tbTenantRentHouseId.TabIndex = 23;
             this.tbTenantRentHouseId.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbRentHouseId_KeyUp);
             // 
@@ -311,7 +312,7 @@
             this.lbTenantRentHouseId.AutoSize = true;
             this.lbTenantRentHouseId.Location = new System.Drawing.Point(38, 38);
             this.lbTenantRentHouseId.Name = "lbTenantRentHouseId";
-            this.lbTenantRentHouseId.Size = new System.Drawing.Size(72, 21);
+            this.lbTenantRentHouseId.Size = new System.Drawing.Size(59, 17);
             this.lbTenantRentHouseId.TabIndex = 27;
             this.lbTenantRentHouseId.Text = "House ID";
             // 
@@ -328,13 +329,14 @@
             // 
             // TenantForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(782, 553);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tabControlTenant);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(800, 600);
@@ -343,6 +345,7 @@
             this.Padding = new System.Windows.Forms.Padding(4);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tenant Dashbord | House Management System For AIUB Students";
+            this.Load += new System.EventHandler(this.TenantForm_Load);
             this.tabControlTenant.ResumeLayout(false);
             this.tabTenantEditProfile.ResumeLayout(false);
             this.tabTenantEditProfile.PerformLayout();

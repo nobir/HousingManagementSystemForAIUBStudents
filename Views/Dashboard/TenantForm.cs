@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
 using HousingManagementSystemForAIUBStudents.Models;
+using HousingManagementSystemForAIUBStudents.Controllers;
 
 namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 {
@@ -315,6 +316,13 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             this._SetButtonEnableProperties(btnTenantEditProfile, Inputs.TenantEditButton);
         }
 
+        private void _LoadTenantEditInfromation()
+        {
+            tbTenantEditName.Text = this.tenant.Name.Trim();
+            tbTenantEditEmail.Text = this.tenant.Email.Trim();
+            tbTenantEditPhone.Text = this.tenant.Phone.Trim();
+        }
+
         private void tbEditName_KeyUp(object sender, KeyEventArgs e)
         {
             this._CheckTenantEditNameValidation();
@@ -342,6 +350,61 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             }
 
             // Start Database Editing process
+
+            string name = tbTenantEditName.Text.Trim();
+            string oldEmail = this.tenant.Email.Trim();
+            string newEmail = tbTenantEditEmail.Text.Trim();
+            string phone = tbTenantEditPhone.Text.Trim();
+
+            // new tenant
+            Tenant newTenant = new Tenant();
+                newTenant.Name = name;
+                newTenant.Email = newEmail;
+                newTenant.Phone = phone;
+                newTenant.Password = tenant.Password.Trim();
+
+            // update the tenant
+            Tenant updateTenant = TenantController.EditProfile(newTenant, oldEmail);
+
+            if (updateTenant != null)
+            {
+                // update the auth
+                this.tenant.Name = updateTenant.Name.Trim();
+                this.tenant.Email = updateTenant.Email.Trim();
+                this.tenant.Phone = updateTenant.Phone.Trim();
+
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "Successfully Updated your profile",
+                    "Susscess | Update Profile",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                //update the form
+                tbTenantEditName.Text = updateTenant.Name.Trim();
+                tbTenantEditEmail.Text = updateTenant.Email.Trim();
+                tbTenantEditPhone.Text = updateTenant.Phone.Trim();
+
+                // disable the submit (Edit) button
+                btnTenantEditProfile.Enabled = false;
+            }
+            else
+            {
+                this._LoadTenantEditInfromation();
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "Updating profile Unsuccessfull",
+                    "Unsuccessfull | Profile not update",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+        }
+
+        private void TenantForm_Load(object sender, EventArgs e)
+        {
+            this._LoadTenantEditInfromation();
         }
 
         #endregion

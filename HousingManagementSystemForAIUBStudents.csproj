@@ -48,6 +48,7 @@
     <Compile Include="Controllers\Controllers.cs" />
     <Compile Include="Controllers\IndexLoginController.cs" />
     <Compile Include="Controllers\IndexRegistrationController.cs" />
+    <Compile Include="Controllers\TenantController.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Admins.cs" />
     <Compile Include="Models\Database.cs" />
