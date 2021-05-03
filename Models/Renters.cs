@@ -40,6 +40,7 @@ namespace HousingManagementSystemForAIUBStudents.Models
                     renter.Name = reader.GetString(reader.GetOrdinal("name"));
                     renter.Email = reader.GetString(reader.GetOrdinal("email"));
                     renter.Phone = reader.GetString(reader.GetOrdinal("phone"));
+                    renter.Password = reader.GetString(reader.GetOrdinal("password"));
                 }
             }
             catch (Exception ex)

@@ -39,6 +39,7 @@ namespace HousingManagementSystemForAIUBStudents.Models
                     admin.Id = reader.GetInt32(reader.GetOrdinal("a_id"));
                     admin.Name = reader.GetString(reader.GetOrdinal("name"));
                     admin.Email = reader.GetString(reader.GetOrdinal("email"));
+                    admin.Password = reader.GetString(reader.GetOrdinal("password"));
                 }
             }
             catch (Exception ex)
