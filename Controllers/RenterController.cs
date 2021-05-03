@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 using HousingManagementSystemForAIUBStudents.Models;
 
@@ -24,6 +25,15 @@ namespace HousingManagementSystemForAIUBStudents.Controllers
             }
 
             return null;
+        }
+
+        public static House GetHouse(string houseId)
+        {
+            return Database.Instance.Houses.GetHouse(houseId);
+        }
+        public static ArrayList GetAllHouse()
+        {
+            return Database.Instance.Houses.GetAllHouse();
         }
     }
 }

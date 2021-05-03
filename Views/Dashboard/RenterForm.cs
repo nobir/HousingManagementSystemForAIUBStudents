@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Collections;
 
 using HousingManagementSystemForAIUBStudents.Models;
 using HousingManagementSystemForAIUBStudents.Controllers;
@@ -497,14 +498,19 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             this._SetButtonEnableProperties(btnRenterViewHouse, Inputs.RenterSearchHouseButton);
         }
 
+        private void _LoadRenterViewHouseInformation()
+        {
+            dgvRenterViewHouse.DataSource = RenterController.GetAllHouse();
+        }
+
         private void tbRenterViewHouseId_KeyUp(object sender, KeyEventArgs e)
         {
             this._CheckRenterViewHouseIdValidation();
         }
 
-        private void btnRenterViewHouse_KeyUp(object sender, KeyEventArgs e)
+        private void btnRenterViewHouse_Click(object sender, EventArgs e)
         {
-            if (this._IsHouseIdValid(tbRenterViewHouseId))
+            if (!this._IsHouseIdValid(tbRenterViewHouseId))
             {
                 this._CheckRenterViewHouseIdValidation();
 
@@ -512,6 +518,35 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             }
 
             // Start Database Searching process
+
+            string houseId = tbRenterViewHouseId.Text.Trim();
+
+            House house = RenterController.GetHouse(houseId);
+
+            if (house != null)
+            {
+                ArrayList houses = new ArrayList();
+                houses.Add(house);
+                dgvRenterViewHouse.DataSource = houses;
+                tbRenterViewHouseId.Text = "";
+            }
+            else
+            {
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "House not found",
+                    "Error | House not found",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                this._LoadRenterViewHouseInformation();
+            }
+        }
+
+        private void btnRenterViewHouseShowAll_Click(object sender, EventArgs e)
+        {
+            this._LoadRenterViewHouseInformation();
         }
 
         #endregion
@@ -805,6 +840,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         private void RenterForm_Load(object sender, EventArgs e)
         {
             this._LoadRenterEditInfromation();
+            this._LoadRenterViewHouseInformation();
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RenterForm));
             this.tabRenterViewHouse = new System.Windows.Forms.TabPage();
-            this.actionMsgRenterViewHouse = new System.Windows.Forms.Label();
+            this.btnRenterViewHouseShowAll = new System.Windows.Forms.Button();
             this.errMsgRenterViewHouseId = new System.Windows.Forms.Label();
             this.tbRenterViewHouseId = new System.Windows.Forms.TextBox();
             this.lbRenterViewHouseId = new System.Windows.Forms.Label();
@@ -78,7 +78,7 @@
             // 
             // tabRenterViewHouse
             // 
-            this.tabRenterViewHouse.Controls.Add(this.actionMsgRenterViewHouse);
+            this.tabRenterViewHouse.Controls.Add(this.btnRenterViewHouseShowAll);
             this.tabRenterViewHouse.Controls.Add(this.errMsgRenterViewHouseId);
             this.tabRenterViewHouse.Controls.Add(this.tbRenterViewHouseId);
             this.tabRenterViewHouse.Controls.Add(this.lbRenterViewHouseId);
@@ -92,17 +92,15 @@
             this.tabRenterViewHouse.Text = "View House";
             this.tabRenterViewHouse.UseVisualStyleBackColor = true;
             // 
-            // actionMsgRenterViewHouse
+            // btnRenterViewHouseShowAll
             // 
-            this.actionMsgRenterViewHouse.AutoSize = true;
-            this.actionMsgRenterViewHouse.Font = new System.Drawing.Font("Calibri", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actionMsgRenterViewHouse.ForeColor = System.Drawing.Color.Red;
-            this.actionMsgRenterViewHouse.Location = new System.Drawing.Point(225, 137);
-            this.actionMsgRenterViewHouse.Name = "actionMsgRenterViewHouse";
-            this.actionMsgRenterViewHouse.Size = new System.Drawing.Size(209, 29);
-            this.actionMsgRenterViewHouse.TabIndex = 34;
-            this.actionMsgRenterViewHouse.Text = "House Not Found!!!";
-            this.actionMsgRenterViewHouse.Visible = false;
+            this.btnRenterViewHouseShowAll.Location = new System.Drawing.Point(554, 75);
+            this.btnRenterViewHouseShowAll.Name = "btnRenterViewHouseShowAll";
+            this.btnRenterViewHouseShowAll.Size = new System.Drawing.Size(150, 35);
+            this.btnRenterViewHouseShowAll.TabIndex = 34;
+            this.btnRenterViewHouseShowAll.Text = "Show All";
+            this.btnRenterViewHouseShowAll.UseVisualStyleBackColor = true;
+            this.btnRenterViewHouseShowAll.Click += new System.EventHandler(this.btnRenterViewHouseShowAll_Click);
             // 
             // errMsgRenterViewHouseId
             // 
@@ -140,16 +138,16 @@
             this.btnRenterViewHouse.TabIndex = 31;
             this.btnRenterViewHouse.Text = "Search";
             this.btnRenterViewHouse.UseVisualStyleBackColor = true;
-            this.btnRenterViewHouse.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnRenterViewHouse_KeyUp);
+            this.btnRenterViewHouse.Click += new System.EventHandler(this.btnRenterViewHouse_Click);
             // 
             // dgvRenterViewHouse
             // 
             this.dgvRenterViewHouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRenterViewHouse.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvRenterViewHouse.Location = new System.Drawing.Point(3, 242);
+            this.dgvRenterViewHouse.Location = new System.Drawing.Point(3, 116);
             this.dgvRenterViewHouse.Name = "dgvRenterViewHouse";
             this.dgvRenterViewHouse.RowTemplate.Height = 24;
-            this.dgvRenterViewHouse.Size = new System.Drawing.Size(760, 266);
+            this.dgvRenterViewHouse.Size = new System.Drawing.Size(760, 392);
             this.dgvRenterViewHouse.TabIndex = 0;
             // 
             // tabControlRenter
@@ -553,10 +551,10 @@
         private System.Windows.Forms.TextBox tbRenterDeleteHouseId;
         private System.Windows.Forms.Label lbRenterDeleteHouseId;
         private System.Windows.Forms.Button btnRenterDeleteHouse;
-        private System.Windows.Forms.Label actionMsgRenterViewHouse;
         private System.Windows.Forms.Label errMsgRenterViewHouseId;
         private System.Windows.Forms.TextBox tbRenterViewHouseId;
         private System.Windows.Forms.Label lbRenterViewHouseId;
         private System.Windows.Forms.Button btnRenterViewHouse;
+        private System.Windows.Forms.Button btnRenterViewHouseShowAll;
     }
 }
