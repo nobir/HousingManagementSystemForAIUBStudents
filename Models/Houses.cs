@@ -136,5 +136,37 @@ namespace HousingManagementSystemForAIUBStudents.Models
 
             return false;
         }
+
+        public bool DeleteHouse(string houseId)
+        {
+            string query = "";
+            int r = 0;
+
+            Houses.connection.Open();
+
+            try
+            {
+                query = String.Format("DELETE FROM house WHERE h_id='{0}'", houseId);
+                SqlCommand cmd = new SqlCommand(query, Houses.connection);
+                r = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Houses.connection.Close();
+
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "House Delete Unsuccessfull!\n\n" + ex,
+                    "ERROR | House not Deleted",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+
+            Houses.connection.Close();
+            if (r > 0) return true;
+
+            return false;
+        }
     }
 }

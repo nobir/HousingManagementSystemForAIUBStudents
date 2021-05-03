@@ -40,5 +40,10 @@ namespace HousingManagementSystemForAIUBStudents.Controllers
         {
             return Database.Instance.Houses.AddHouse(house, renterId);
         }
+
+        public static bool DeleteHouse(string houseId)
+        {
+            return Database.Instance.Houses.DeleteHouse(houseId);
+        }
     }
 }

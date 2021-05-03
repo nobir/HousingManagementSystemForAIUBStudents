@@ -817,6 +817,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 
             if (isCreated)
             {
+                this._LoadRenterViewHouseInformation();
                 // Displays the MessageBox.
                 MessageBox.Show(
                     "Added Successfull!",
@@ -873,7 +874,7 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 
         private void btnRenterDeleteHouse_Click(object sender, EventArgs e)
         {
-            if (this._IsHouseIdValid(tbRenterDeleteHouseId))
+            if (!this._IsHouseIdValid(tbRenterDeleteHouseId))
             {
                 this._CheckRenterDeleteHouseIdValidation();
 
@@ -881,6 +882,45 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             }
 
             // Start Database Searching process
+
+            DialogResult confirm = MessageBox.Show(
+                this,
+                "Are you sure you want to Delete the House data?",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (confirm == DialogResult.Yes)
+            {
+                string houseId = tbRenterDeleteHouseId.Text.Trim();
+
+                bool isHouseDelete = RenterController.DeleteHouse(houseId);
+
+                if (isHouseDelete)
+                {
+                    // Displays the MessageBox.
+                    MessageBox.Show(
+                        "User Deleted Successfully",
+                        "Success | User Deleted",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+
+                    tbRenterDeleteHouseId.Text = "";
+                    this._LoadRenterViewHouseInformation();
+                }
+                else
+                {
+                    // Displays the MessageBox.
+                    MessageBox.Show(
+                        "User not found",
+                        "Error | User not found",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+            }
         }
 
         #endregion
