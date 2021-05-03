@@ -132,6 +132,38 @@ namespace HousingManagementSystemForAIUBStudents.Models
             return renter;
         }
 
+        public bool UpdateUser(Renter renter, string oldEmail)
+        {
+            string query = "";
+            int r = 0;
+
+            Renters.connection.Open();
+
+            try
+            {
+                query = String.Format("UPDATE renter SET name='{1}', email='{2}', phone='{3}' WHERE email='{0}'", oldEmail, renter.Name, renter.Email, renter.Phone);
+                SqlCommand cmd = new SqlCommand(query, Renters.connection);
+                r = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Renters.connection.Close();
+
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "Renter Edit Unsuccessfull!\n\n" + ex,
+                    "ERROR | Renter not Edited",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+
+            Renters.connection.Close();
+
+            if (r > 0) return true;
+            return false;
+        }
+
         public bool DeleteUser(string email)
         {
             string query = "";

@@ -502,6 +502,7 @@
             this.Padding = new System.Windows.Forms.Padding(4);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Renter Dashbord | House Management System For AIUB Students";
+            this.Load += new System.EventHandler(this.RenterForm_Load);
             this.tabRenterViewHouse.ResumeLayout(false);
             this.tabRenterViewHouse.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenterViewHouse)).EndInit();

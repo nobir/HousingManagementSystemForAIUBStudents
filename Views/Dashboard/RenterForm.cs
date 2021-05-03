@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
 using HousingManagementSystemForAIUBStudents.Models;
+using HousingManagementSystemForAIUBStudents.Controllers;
 
 namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
 {
@@ -371,6 +372,13 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             this._SetButtonEnableProperties(btnRenterEditProfile, Inputs.RenterEditButton);
         }
 
+        private void _LoadRenterEditInfromation()
+        {
+            tbRenterEditName.Text = this.renter.Name.Trim();
+            tbRenterEditEmail.Text = this.renter.Email.Trim();
+            tbRenterEditPhone.Text = this.renter.Phone.Trim();
+        }
+
         private void tbRenterEditName_KeyUp(object sender, KeyEventArgs e)
         {
             this._CheckRenterEditNameValidation();
@@ -398,6 +406,56 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
             }
 
             // Start Database Editing process
+
+            string name = tbRenterEditName.Text.Trim();
+            string oldEmail = this.renter.Email.Trim();
+            string newEmail = tbRenterEditEmail.Text.Trim();
+            string phone = tbRenterEditPhone.Text.Trim();
+
+            // new tenant
+            Renter newRenter = new Renter();
+                newRenter.Name = name;
+                newRenter.Email = newEmail;
+                newRenter.Phone = phone;
+                newRenter.Password = renter.Password.Trim();
+
+            // update the tenant
+            Renter updateRenter = RenterController.EditProfile(newRenter, oldEmail);
+
+            if (updateRenter != null)
+            {
+                // update the auth
+                this.renter.Name = updateRenter.Name.Trim();
+                this.renter.Email = updateRenter.Email.Trim();
+                this.renter.Phone = updateRenter.Phone.Trim();
+
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "Successfully Updated your profile",
+                    "Susscess | Update Profile",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                //update the form
+                tbRenterEditName.Text = updateRenter.Name.Trim();
+                tbRenterEditEmail.Text = updateRenter.Email.Trim();
+                tbRenterEditPhone.Text = updateRenter.Phone.Trim();
+
+                // disable the submit (Edit) button
+                btnRenterEditProfile.Enabled = false;
+            }
+            else
+            {
+                this._LoadRenterEditInfromation();
+                // Displays the MessageBox.
+                MessageBox.Show(
+                    "Updating profile Unsuccessfull",
+                    "Unsuccessfull | Profile not update",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
         }
 
         #endregion
@@ -743,5 +801,10 @@ namespace HousingManagementSystemForAIUBStudents.Views.Dashboard
         }
 
         #endregion
+
+        private void RenterForm_Load(object sender, EventArgs e)
+        {
+            this._LoadRenterEditInfromation();
+        }
     }
 }
